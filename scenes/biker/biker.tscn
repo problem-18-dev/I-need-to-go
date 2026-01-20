@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://qgnytcm01up3"]
+
+[ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_ga100"]
+[ext_resource type="Texture2D" uid="uid://jx6wkmryxr0s" path="res://assets/images/biker.png" id="2_h2ltg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2ltg"]
+size = Vector2(42, 42)
+
+[node name="Biker" instance=ExtResource("1_ga100")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1, -21)
+shape = SubResource("RectangleShape2D_h2ltg")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(4, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_h2ltg")
