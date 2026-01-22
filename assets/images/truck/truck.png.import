@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cagajk1y2eqnv"
-path="res://.godot/imported/man_idle_side.png-d100b35a73f3e0b5caf8850a0f20edc6.ctex"
+uid="uid://h6cykkicvrm1"
+path="res://.godot/imported/truck.png-4083f7de27e58e5a18c5ff4cb8c81367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/man_idle_side.png"
-dest_files=["res://.godot/imported/man_idle_side.png-d100b35a73f3e0b5caf8850a0f20edc6.ctex"]
+source_file="res://assets/images/truck/truck.png"
+dest_files=["res://.godot/imported/truck.png-4083f7de27e58e5a18c5ff4cb8c81367.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jx6wkmryxr0s"
-path="res://.godot/imported/biker.png-caeb5a79f928277d274528f7705d5cef.ctex"
+uid="uid://dloxj8hnlxnvy"
+path="res://.godot/imported/man_walk_side.png-53bbc9113ed9c153707900c336adcc64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/biker.png"
-dest_files=["res://.godot/imported/biker.png-caeb5a79f928277d274528f7705d5cef.ctex"]
+source_file="res://assets/images/player/man_walk_side.png"
+dest_files=["res://.godot/imported/man_walk_side.png-53bbc9113ed9c153707900c336adcc64.ctex"]
 
 [params]
 
