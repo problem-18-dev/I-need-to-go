@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpro0h54ppmqc"]
+[gd_scene load_steps=3 format=3 uid="uid://cpro0h54ppmqc"]
 
 [ext_resource type="Script" uid="uid://cs1v8v51w5aku" path="res://scenes/obstacle/obstacle.gd" id="1_f7iuw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7iuw"]
 
 [node name="Obstacle" type="Area2D"]
 collision_layer = 2
@@ -10,6 +12,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f7iuw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

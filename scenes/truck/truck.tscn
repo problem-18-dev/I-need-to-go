@@ -1,19 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2gwwmdtf0qhl"]
+[gd_scene load_steps=7 format=3 uid="uid://bfpbpl8txmucx"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_nl00s"]
 [ext_resource type="Texture2D" uid="uid://h6cykkicvrm1" path="res://assets/images/truck.png" id="2_u5nev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl00s"]
-size = Vector2(58, 22)
+size = Vector2(124, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nev"]
+atlas = ExtResource("2_u5nev")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oim3y"]
+atlas = ExtResource("2_u5nev")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ida5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5nev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oim3y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Truck" instance=ExtResource("1_nl00s")]
-monitorable = false
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -11)
+position = Vector2(0, -28)
 shape = SubResource("RectangleShape2D_nl00s")
 
-[node name="Sprite2D" parent="." index="1"]
-position = Vector2(-1, -16)
-scale = Vector2(2, 2)
-texture = ExtResource("2_u5nev")
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_3ida5")
