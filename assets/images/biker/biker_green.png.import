@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvw7iojrgv8lw"
-path="res://.godot/imported/biker_green.png-41750b3332d186b26d66849a7dd05154.ctex"
+path="res://.godot/imported/biker_green.png-3146d5ad8ce43a9d527fb21eafcb2e69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/biker_green.png"
-dest_files=["res://.godot/imported/biker_green.png-41750b3332d186b26d66849a7dd05154.ctex"]
+source_file="res://assets/images/biker/biker_green.png"
+dest_files=["res://.godot/imported/biker_green.png-3146d5ad8ce43a9d527fb21eafcb2e69.ctex"]
 
 [params]
 

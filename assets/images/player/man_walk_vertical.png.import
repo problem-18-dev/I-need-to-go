@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyv61t3jifbng"
-path="res://.godot/imported/biker_blue.png-4d53686e1ccef425c749aac4272e6bf9.ctex"
+uid="uid://bcafe1ck5aip2"
+path="res://.godot/imported/man_walk_vertical.png-2d5f58a1ba07c0a6f3817d5afe0d8abb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/biker_blue.png"
-dest_files=["res://.godot/imported/biker_blue.png-4d53686e1ccef425c749aac4272e6bf9.ctex"]
+source_file="res://assets/images/player/man_walk_vertical.png"
+dest_files=["res://.godot/imported/man_walk_vertical.png-2d5f58a1ba07c0a6f3817d5afe0d8abb.ctex"]
 
 [params]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfpbpl8txmucx"]
+[gd_scene load_steps=8 format=3 uid="uid://bfpbpl8txmucx"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_nl00s"]
-[ext_resource type="Texture2D" uid="uid://h6cykkicvrm1" path="res://assets/images/truck.png" id="2_u5nev"]
+[ext_resource type="Script" uid="uid://i5a32ehiy6o5" path="res://scenes/truck/truck.gd" id="2_oim3y"]
+[ext_resource type="Texture2D" uid="uid://h6cykkicvrm1" path="res://assets/images/truck/truck.png" id="2_u5nev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl00s"]
 size = Vector2(124, 56)
@@ -29,6 +30,7 @@ animations = [{
 }]
 
 [node name="Truck" instance=ExtResource("1_nl00s")]
+script = ExtResource("2_oim3y")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -28)

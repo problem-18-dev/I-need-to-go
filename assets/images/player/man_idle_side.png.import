@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dloxj8hnlxnvy"
-path="res://.godot/imported/man_walk_side.png-ad751d8df00eacf51bba317b0ca4b444.ctex"
+uid="uid://cagajk1y2eqnv"
+path="res://.godot/imported/man_idle_side.png-4245bf9c3b0e98effe8b90a3e6a5bb08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/man_walk_side.png"
-dest_files=["res://.godot/imported/man_walk_side.png-ad751d8df00eacf51bba317b0ca4b444.ctex"]
+source_file="res://assets/images/player/man_idle_side.png"
+dest_files=["res://.godot/imported/man_idle_side.png-4245bf9c3b0e98effe8b90a3e6a5bb08.ctex"]
 
 [params]
 
