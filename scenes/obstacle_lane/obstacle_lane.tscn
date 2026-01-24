@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://mp5dlw85rnyn"]
+
+[ext_resource type="Script" uid="uid://cg80cm1n58rta" path="res://scenes/obstacle_lane/obstacle_lane.gd" id="1_pboy0"]
+
+[node name="ObstacleLane" type="Node2D"]
+script = ExtResource("1_pboy0")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]

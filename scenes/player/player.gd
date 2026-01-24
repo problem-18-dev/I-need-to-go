@@ -3,54 +3,55 @@ extends CharacterBody2D
 
 @export_category("Movement")
 @export var move_speed := 120.0
-@export var move_time := 0.5
+@export var move_distance := 32.0
 
-var _direction := Vector2.ZERO
-
-
-func _ready() -> void:
-	$MovementTimer.wait_time = move_time
+@onready var next_position := position
 
 
-func _physics_process(_delta: float) -> void:
-	_handle_movement()
-	velocity = _direction * move_speed
+func _physics_process(delta: float) -> void:
+	var direction := position.direction_to(next_position)
+
+	# Snap target to next position if very close
+	var distance_to_target := position.distance_to(next_position)
+	if distance_to_target <= move_speed * delta:
+		position = next_position
+		$AnimatedSprite2D.play("idle")
+		direction = Vector2.ZERO
+
+	if velocity.is_zero_approx() and (position.x < 0 or position.x > get_viewport_rect().size.x):
+		die()
+
+	velocity = direction * move_speed
 	move_and_slide()
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not velocity.is_zero_approx():
+		return
+
+	if event.is_action_pressed("move_up"):
+		next_position.y -= move_distance
+		$AnimatedSprite2D.play("walk_vertical")
+	elif event.is_action_pressed("move_down"):
+		next_position.y += move_distance
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("walk_vertical")
+	elif event.is_action_pressed("move_left"):
+		next_position.x -= move_distance
+		$AnimatedSprite2D.play("walk_side")
+		$AnimatedSprite2D.flip_h = true
+	elif event.is_action_pressed("move_right"):
+		next_position.x += move_distance
+		$AnimatedSprite2D.play("walk_side")
+		$AnimatedSprite2D.flip_h = false
 
 
 func die() -> void:
 	print("OH NO, I DIED")
 
 
-func _handle_movement() -> void:
-	if not $MovementTimer.is_stopped():
-		return
-
-	if Input.is_action_just_pressed("move_up"):
-		_direction = Vector2.UP
-		$AnimatedSprite2D.play("walk_vertical")
-	elif Input.is_action_just_pressed("move_down"):
-		_direction = Vector2.DOWN
+func move_back() -> void:
+	if velocity.is_zero_approx():
+		next_position.y += move_distance
 		$AnimatedSprite2D.flip_h = true
 		$AnimatedSprite2D.play("walk_vertical")
-	elif Input.is_action_just_pressed("move_left"):
-		_direction = Vector2.LEFT
-		$AnimatedSprite2D.play("walk_side")
-		$AnimatedSprite2D.flip_h = true
-	elif Input.is_action_just_pressed("move_right"):
-		_direction = Vector2.RIGHT
-		$AnimatedSprite2D.play("walk_side")
-		$AnimatedSprite2D.flip_h = false
-
-	if _direction != Vector2.ZERO:
-		$MovementTimer.start()
-
-
-func _on_movement_timer_timeout() -> void:
-	match _direction:
-		Vector2.UP, Vector2.DOWN:
-			$AnimatedSprite2D.play("idle")
-		Vector2.LEFT, Vector2.RIGHT:
-			$AnimatedSprite2D.play("idle_side")
-
-	_direction = Vector2.ZERO

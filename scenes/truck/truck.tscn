@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://h6cykkicvrm1" path="res://assets/images/truck/truck.png" id="2_u5nev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl00s"]
-size = Vector2(124, 56)
+size = Vector2(124, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5nev"]
 atlas = ExtResource("2_u5nev")
@@ -33,9 +33,12 @@ animations = [{
 script = ExtResource("2_oim3y")
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -28)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_nl00s")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_3ida5")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(72, -26)
