@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://12hfduj785mb"]
+
+[ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_2otwt"]
+[ext_resource type="Texture2D" uid="uid://djeslbt4p32ch" path="res://assets/images/cars/sports_car.png" id="2_2otwt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2otwt"]
+size = Vector2(114, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66fjf"]
+atlas = ExtResource("2_2otwt")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixo4y"]
+atlas = ExtResource("2_2otwt")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xilmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66fjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixo4y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SportsCar" instance=ExtResource("1_2otwt")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, -8)
+shape = SubResource("RectangleShape2D_2otwt")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_xilmd")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(62, -5)
+rect = Rect2(-6, -5, 12, 10)

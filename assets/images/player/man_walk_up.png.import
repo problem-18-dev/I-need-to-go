@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjpw6dmw2ai77"
-path="res://.godot/imported/phone_zombie.png-2aca7aec5ef5e9ea743f103a38c91e0e.ctex"
+uid="uid://bsmpkk16467ii"
+path="res://.godot/imported/man_walk_up.png-536d85f9b82cfb6165fc31cfefe96b32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/phone_zombie.png"
-dest_files=["res://.godot/imported/phone_zombie.png-2aca7aec5ef5e9ea743f103a38c91e0e.ctex"]
+source_file="res://assets/images/player/man_walk_up.png"
+dest_files=["res://.godot/imported/man_walk_up.png-536d85f9b82cfb6165fc31cfefe96b32.ctex"]
 
 [params]
 
