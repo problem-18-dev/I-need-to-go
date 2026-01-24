@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bcafe1ck5aip2" path="res://assets/images/player/man_walk_vertical.png" id="5_0owmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(18, 59)
+size = Vector2(18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("2_dovo2")
@@ -129,17 +129,11 @@ script = ExtResource("1_dovo2")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -29.5)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_dovo2")
-
-[node name="MovementTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_lvxji")
 animation = &"walk_vertical"
 autoplay = "idle"
-
-[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]

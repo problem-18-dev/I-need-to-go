@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://deltiird3rqx8" path="res://assets/images/biker/biker_red.png" id="5_gtxuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2ltg"]
-size = Vector2(48, 34)
+size = Vector2(48, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2ltg"]
 atlas = ExtResource("2_nl00s")
@@ -71,13 +71,16 @@ animations = [{
 
 [node name="Biker" instance=ExtResource("1_nl00s")]
 script = ExtResource("2_m4ak3")
-animation = 0
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(1, -17)
+position = Vector2(1, -9)
 shape = SubResource("RectangleShape2D_h2ltg")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(1, -24)
 sprite_frames = SubResource("SpriteFrames_ga100")
 animation = &"blue"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(35, -9)
+rect = Rect2(-10, -8, 20, 16)

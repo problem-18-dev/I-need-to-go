@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://call54n4tvp4u"]
+
+[ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_eev11"]
+[ext_resource type="Script" uid="uid://bh01j18x1cd4d" path="res://scenes/phone_zombie/phone_zombie.gd" id="2_5rshu"]
+[ext_resource type="Texture2D" uid="uid://bjpw6dmw2ai77" path="res://assets/images/phone_zombie.png" id="3_5rshu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ik0x"]
+size = Vector2(22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vptk"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc215"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgsdp"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20buj"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wmdg"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtikf"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6os8t"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq686"]
+atlas = ExtResource("3_5rshu")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h812c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vptk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc215")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgsdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20buj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wmdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtikf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6os8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq686")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.5
+}]
+
+[node name="PhoneZombie" instance=ExtResource("1_eev11")]
+script = ExtResource("2_5rshu")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_6ik0x")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -40)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_h812c")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="2"]
+position = Vector2(0, -10)
+rotation = 1.5707964
+target_position = Vector2(0, 64)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+position = Vector2(21, -10)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
