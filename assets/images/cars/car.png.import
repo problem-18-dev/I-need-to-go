@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sr2x0ic5a0t"
-path="res://.godot/imported/biker_red.png-311aa02e91b5a1f379100460b1994eb9.ctex"
+uid="uid://dakfirnuiic7b"
+path="res://.godot/imported/car.png-16849589adb9f2c1fff63dc85b20d1c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/biker/biker_red.png"
-dest_files=["res://.godot/imported/biker_red.png-311aa02e91b5a1f379100460b1994eb9.ctex"]
+source_file="res://assets/images/cars/car.png"
+dest_files=["res://.godot/imported/car.png-16849589adb9f2c1fff63dc85b20d1c9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcafe1ck5aip2"
-path="res://.godot/imported/man_walk_vertical.png-2d5f58a1ba07c0a6f3817d5afe0d8abb.ctex"
+uid="uid://cteni1t2ksnge"
+path="res://.godot/imported/man_death.png-4a649d91f7aec35ce4eea7be3701342d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/man_walk_vertical.png"
-dest_files=["res://.godot/imported/man_walk_vertical.png-2d5f58a1ba07c0a6f3817d5afe0d8abb.ctex"]
+source_file="res://assets/images/player/man_death.png"
+dest_files=["res://.godot/imported/man_death.png-4a649d91f7aec35ce4eea7be3701342d.ctex"]
 
 [params]
 

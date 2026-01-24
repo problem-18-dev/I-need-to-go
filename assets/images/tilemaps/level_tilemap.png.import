@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbq3rcsbtxjx"
-path="res://.godot/imported/man_idle.png-c564c38c8ee0347e94cc877d3f1d661c.ctex"
+uid="uid://jokghk18bx48"
+path="res://.godot/imported/level_tilemap.png-3bdb04135fd4abd71477f27d44e981be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/man_idle.png"
-dest_files=["res://.godot/imported/man_idle.png-c564c38c8ee0347e94cc877d3f1d661c.ctex"]
+source_file="res://assets/images/tilemaps/level_tilemap.png"
+dest_files=["res://.godot/imported/level_tilemap.png-3bdb04135fd4abd71477f27d44e981be.ctex"]
 
 [params]
 

@@ -1,47 +1,54 @@
-[gd_scene load_steps=14 format=3 uid="uid://call54n4tvp4u"]
+[gd_scene load_steps=15 format=3 uid="uid://call54n4tvp4u"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_eev11"]
 [ext_resource type="Script" uid="uid://bh01j18x1cd4d" path="res://scenes/phone_zombie/phone_zombie.gd" id="2_5rshu"]
-[ext_resource type="Texture2D" uid="uid://bjpw6dmw2ai77" path="res://assets/images/phone_zombie.png" id="3_5rshu"]
+[ext_resource type="Texture2D" uid="uid://bjpw6dmw2ai77" path="res://assets/images/phone_zombie/phone_zombie.png" id="3_5rshu"]
+[ext_resource type="Texture2D" uid="uid://bf3wi7p4ctui1" path="res://assets/images/phone_zombie/phone_zombie_anger.png" id="4_6ik0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ik0x"]
 size = Vector2(22, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vptk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rshu"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uc215"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ik0x"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgsdp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vptk"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_20buj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc215"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wmdg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgsdp"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtikf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_20buj"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6os8t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wmdg"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(384, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yq686"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtikf"]
 atlas = ExtResource("3_5rshu")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h812c"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rshu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ik0x")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8vptk")
 }, {
@@ -59,15 +66,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vtikf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6os8t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yq686")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"new_animation",
 "speed": 7.5
 }]
 
@@ -82,15 +83,21 @@ shape = SubResource("RectangleShape2D_6ik0x")
 position = Vector2(0, -40)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_h812c")
-animation = &"walk"
-autoplay = "walk"
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.015419568
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="2"]
 position = Vector2(0, -10)
 rotation = 1.5707964
-target_position = Vector2(0, 64)
+target_position = Vector2(0, 56)
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="3"]
 position = Vector2(21, -10)
+
+[node name="AngerSprite2D" type="Sprite2D" parent="." index="4"]
+position = Vector2(-4, -56)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("4_6ik0x")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

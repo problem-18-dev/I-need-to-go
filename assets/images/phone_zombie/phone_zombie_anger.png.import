@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sr2x0ic5a0t"
-path="res://.godot/imported/biker_red.png-311aa02e91b5a1f379100460b1994eb9.ctex"
+uid="uid://bf3wi7p4ctui1"
+path="res://.godot/imported/phone_zombie_anger.png-76e908b6218f83eaab2a11f08a40cc44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/biker/biker_red.png"
-dest_files=["res://.godot/imported/biker_red.png-311aa02e91b5a1f379100460b1994eb9.ctex"]
+source_file="res://assets/images/phone_zombie/phone_zombie_anger.png"
+dest_files=["res://.godot/imported/phone_zombie_anger.png-76e908b6218f83eaab2a11f08a40cc44.ctex"]
 
 [params]
 
