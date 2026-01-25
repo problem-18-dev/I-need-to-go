@@ -9,6 +9,8 @@ var scenes := {
 	Scene.MAIN_MENU: "res://hud/main_menu.tscn",
 	Scene.INFO_MENU: "res://hud/info_menu.tscn",
 	Scene.LEVEL_ONE: "res://levels/level_one.tscn",
+	Scene.LEVEL_TWO: "res://levels/level_two.tscn",
+	Scene.LEVEL_THREE: "res://levels/level_three.tscn",
 }
 
 var current_scene: Node
