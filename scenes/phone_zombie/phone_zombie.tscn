@@ -90,7 +90,7 @@ frame_progress = 0.015419568
 [node name="RayCast2D" type="RayCast2D" parent="." index="2"]
 position = Vector2(0, -10)
 rotation = 1.5707964
-target_position = Vector2(0, 56)
+target_position = Vector2(0, 32)
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="3"]
 position = Vector2(21, -10)

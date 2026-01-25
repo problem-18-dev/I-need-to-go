@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dakfirnuiic7b" path="res://assets/images/cars/car.png" id="2_yhfra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhfra"]
-size = Vector2(110, 16)
+size = Vector2(110, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhfra"]
 atlas = ExtResource("2_yhfra")
@@ -31,12 +31,13 @@ animations = [{
 [node name="Car" instance=ExtResource("1_yr3gr")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -8)
+position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_yhfra")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_tcn38")
+autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
 position = Vector2(68, -10)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhghokv32rcf8"]
+
+[ext_resource type="PackedScene" uid="uid://crd5p4i6mdrot" path="res://scenes/level/level.tscn" id="1_yxx76"]
+[ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/sports_car.tscn" id="2_ncmil"]
+[ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="3_bvjaj"]
+[ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="4_y5xn8"]
+
+[node name="LevelThree" instance=ExtResource("1_yxx76")]
+
+[node name="Car" parent="Vehicles" index="0"]
+position = Vector2(96, 408)
+
+[node name="SportsCar" parent="Vehicles" index="1" instance=ExtResource("2_ncmil")]
+position = Vector2(424, 408)
+speed = 150.0
+
+[node name="SportsCar2" parent="Vehicles" index="2" instance=ExtResource("2_ncmil")]
+position = Vector2(272, 408)
+speed = 150.0
+
+[node name="Cars" parent="Vehicles" index="3" instance=ExtResource("3_bvjaj")]
+position = Vector2(576, 408)
+obstacle_to_spawn = ExtResource("4_y5xn8")
+spawn_frequency = 2.75
+
+[node name="SportCars" parent="Vehicles" index="4" instance=ExtResource("3_bvjaj")]
+position = Vector2(-64, 360)
+obstacle_to_spawn = ExtResource("2_ncmil")
+spawn_frequency = 1.5
+speed = 180
+go_right = true
