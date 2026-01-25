@@ -36,7 +36,7 @@ func _spawn_player() -> void:
 	player.got_to_urinal.connect(_on_player_got_to_urinal)
 	player.moved.connect(_on_player_moved)
 	_player = player
-	call_deferred("add_child", player)
+	$Game.call_deferred("add_child", player)
 
 
 func _end_game() -> void:

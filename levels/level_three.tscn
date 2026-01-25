@@ -1,31 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhghokv32rcf8"]
+[gd_scene load_steps=6 format=3 uid="uid://bhghokv32rcf8"]
 
 [ext_resource type="PackedScene" uid="uid://crd5p4i6mdrot" path="res://scenes/level/level.tscn" id="1_yxx76"]
 [ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/sports_car.tscn" id="2_ncmil"]
 [ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="3_bvjaj"]
-[ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="4_y5xn8"]
+[ext_resource type="PackedScene" uid="uid://call54n4tvp4u" path="res://scenes/phone_zombie/phone_zombie.tscn" id="3_t8sbe"]
+[ext_resource type="PackedScene" uid="uid://c2gwwmdtf0qhl" path="res://scenes/biker/biker.tscn" id="3_y5xn8"]
 
 [node name="LevelThree" instance=ExtResource("1_yxx76")]
 
-[node name="Car" parent="Vehicles" index="0"]
-position = Vector2(96, 408)
+[node name="PhoneZombiesLane" parent="Game/PhoneZombies" index="1" instance=ExtResource("3_bvjaj")]
+position = Vector2(536, 216)
+obstacle_to_spawn = ExtResource("3_t8sbe")
+spawn_frequency = 2.0
+speed = 65
 
-[node name="SportsCar" parent="Vehicles" index="1" instance=ExtResource("2_ncmil")]
-position = Vector2(424, 408)
-speed = 150.0
-
-[node name="SportsCar2" parent="Vehicles" index="2" instance=ExtResource("2_ncmil")]
-position = Vector2(272, 408)
-speed = 150.0
-
-[node name="Cars" parent="Vehicles" index="3" instance=ExtResource("3_bvjaj")]
-position = Vector2(576, 408)
-obstacle_to_spawn = ExtResource("4_y5xn8")
-spawn_frequency = 2.75
-
-[node name="SportCars" parent="Vehicles" index="4" instance=ExtResource("3_bvjaj")]
-position = Vector2(-64, 360)
-obstacle_to_spawn = ExtResource("2_ncmil")
-spawn_frequency = 1.5
-speed = 180
+[node name="PhoneZombiesLane2" parent="Game/PhoneZombies" index="2" instance=ExtResource("3_bvjaj")]
+position = Vector2(-24, 184)
+obstacle_to_spawn = ExtResource("3_t8sbe")
+spawn_frequency = 2.0
+speed = 60
 go_right = true
+
+[node name="BikersLane" parent="Game/Bikers" index="1" instance=ExtResource("3_bvjaj")]
+position = Vector2(536, 312)
+obstacle_to_spawn = ExtResource("3_y5xn8")
+spawn_frequency = 2.0
+speed = 75
+
+[node name="BikersLane2" parent="Game/Bikers" index="2" instance=ExtResource("3_bvjaj")]
+position = Vector2(536, 248)
+obstacle_to_spawn = ExtResource("3_y5xn8")
+spawn_frequency = 2.0
+speed = 90
+
+[node name="BikersLane3" parent="Game/Bikers" index="3" instance=ExtResource("3_bvjaj")]
+position = Vector2(-24, 280)
+obstacle_to_spawn = ExtResource("3_y5xn8")
+spawn_frequency = 2.0
+speed = 85
+go_right = true
+
+[node name="Car" parent="Game/Vehicles" index="0"]
+position = Vector2(72, 440)
+speed = 150.0
+
+[node name="Car2" parent="Game/Vehicles" index="1" instance=ExtResource("2_ncmil")]
+position = Vector2(360, 440)
+speed = 150.0
+
+[node name="Car4" parent="Game/Vehicles" index="2" instance=ExtResource("2_ncmil")]
+position = Vector2(504, 440)
+speed = 150.0
+
+[node name="Car3" parent="Game/Vehicles" index="3" instance=ExtResource("2_ncmil")]
+position = Vector2(216, 440)
+speed = 150.0
+
+[node name="VehiclesLane" parent="Game/Vehicles" index="4" instance=ExtResource("3_bvjaj")]
+position = Vector2(-128, 392)
+obstacle_to_spawn = ExtResource("2_ncmil")
+spawn_frequency = 1.75
+speed = 150
+go_right = true
+
+[node name="VehiclesLane2" parent="Game/Vehicles" index="5" instance=ExtResource("3_bvjaj")]
+position = Vector2(640, 440)
+obstacle_to_spawn = ExtResource("2_ncmil")
+spawn_frequency = 1.75
+speed = 150

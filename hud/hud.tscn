@@ -8,6 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://bi3b81suld364" path="res://assets/images/timer/timer_progress.png" id="6_1kkc0"]
 [ext_resource type="Texture2D" uid="uid://dnkamigvupvng" path="res://assets/images/timer/timer_progress_close.png" id="7_0ivg5"]
 
+[sub_resource type="Animation" id="Animation_1kkc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureProgressBar:texture_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_1kkc0")]
+}
+
 [sub_resource type="Animation" id="Animation_fjv1a"]
 resource_name = "danger"
 length = 2.0
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("7_0ivg5"), ExtResource("6_1kkc0")]
-}
-
-[sub_resource type="Animation" id="Animation_1kkc0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureProgressBar:texture_progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("6_1kkc0")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ivg5"]
@@ -105,6 +105,22 @@ texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
 [node name="TextureRect7" type="TextureRect" parent="Lives"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_6ca3a")
+expand_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="Lives"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_6ca3a")
+expand_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="Lives"]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
