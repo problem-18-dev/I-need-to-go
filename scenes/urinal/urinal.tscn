@@ -1,27 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4ksgenm87x7y"]
+[gd_scene load_steps=5 format=3 uid="uid://d4ksgenm87x7y"]
 
-[ext_resource type="Texture2D" uid="uid://dliy64goo7ped" path="res://assets/images/urinal/urinal.png" id="1_udmgn"]
 [ext_resource type="Script" uid="uid://dupuiaw02aa5f" path="res://scenes/urinal/urinal.gd" id="1_yfsqg"]
+[ext_resource type="Texture2D" uid="uid://bg6q567e8t5ll" path="res://assets/images/urinal/urinal_closed.png" id="2_hjb86"]
+[ext_resource type="Texture2D" uid="uid://bgr8krjiskmco" path="res://assets/images/urinal/urinal_open.png" id="2_yfsqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfsqg"]
-size = Vector2(128, 128)
+size = Vector2(128, 120)
 
 [node name="Urinal" type="Area2D"]
-collision_layer = 4
+collision_layer = 0
 script = ExtResource("1_yfsqg")
+closed_texture = ExtResource("2_hjb86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_yfsqg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_udmgn")
+texture = ExtResource("2_yfsqg")
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-40, 0)
+[node name="DownMarker2D" type="Marker2D" parent="."]
+position = Vector2(32, 56)
 
-[node name="Marker2D2" type="Marker2D" parent="."]
-
-[node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(40, 0)
+[node name="UpMarker2D" type="Marker2D" parent="."]
+position = Vector2(32, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

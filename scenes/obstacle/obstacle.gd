@@ -19,6 +19,7 @@ func flip() -> void:
 	$AnimatedSprite2D.flip_h = true
 	$VisibleOnScreenNotifier2D.position.x = -$VisibleOnScreenNotifier2D.position.x
 
+
 func _on_body_entered(body: Node2D) -> void:
 	body.die()
 

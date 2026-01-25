@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sr2x0ic5a0t"
-path="res://.godot/imported/biker_red.png-311aa02e91b5a1f379100460b1994eb9.ctex"
+uid="uid://co6puo3d8lcy3"
+path="res://.godot/imported/man_pee.png-846524b1e647c852c734dc9d6846b136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/biker/biker_red.png"
-dest_files=["res://.godot/imported/biker_red.png-311aa02e91b5a1f379100460b1994eb9.ctex"]
+source_file="res://assets/images/player/man_pee.png"
+dest_files=["res://.godot/imported/man_pee.png-846524b1e647c852c734dc9d6846b136.ctex"]
 
 [params]
 
