@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var start_lives := 7
+@export var start_lives := 9
 
 var main_scene: Main
 var lives := start_lives
