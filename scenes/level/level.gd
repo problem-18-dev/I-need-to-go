@@ -42,6 +42,8 @@ func _spawn_player() -> void:
 
 
 func _end_game() -> void:
+	GameManager.reset()
+	$TimeLeft.stop()
 	get_tree().call_group("obstacle_lane", "stop_spawning")
 	await $HUD.show_message("game over", 5)
 	GameManager.main_scene.load_scene(Main.Scene.END)
@@ -65,7 +67,6 @@ func _on_player_died() -> void:
 	GameManager.lives -= 1
 	$HUD.change_lives(GameManager.lives)
 	if GameManager.lives <= 0 or GameManager.lives < urinals - _urinals_reached:
-		GameManager.reset()
 		await _end_game()
 		return
 
