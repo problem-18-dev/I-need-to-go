@@ -9,7 +9,7 @@ signal moved
 @export var move_speed := 120.0
 @export var move_distance := 32.0
 
-var _is_moving := false
+var _can_move := true
 var _reached_urinal := false
 
 @onready var next_position := position
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	if distance_to_target <= move_speed * delta:
 		position = next_position
 		$AnimatedSprite2D.play("idle")
-		_is_moving = false
+		_can_move = true
 
 		if _reached_urinal:
 			_pee()
@@ -33,14 +33,14 @@ func _physics_process(delta: float) -> void:
 			moved.emit()
 		return
 
-	_is_moving = true
+	_can_move = false
 	var direction := position.direction_to(next_position)
 	velocity = direction * move_speed
 	move_and_slide()
 
 
 func _input(event: InputEvent) -> void:
-	if _is_moving:
+	if not _can_move or _reached_urinal:
 		return
 
 	if event.is_action_pressed("move_right"):
@@ -65,7 +65,7 @@ func die() -> void:
 
 
 func move_back() -> void:
-	if not _is_moving:
+	if _can_move:
 		next_position.y += move_distance
 		$AnimatedSprite2D.flip_h = true
 		$AnimatedSprite2D.play("walk_vertical")
@@ -80,7 +80,7 @@ func move_to_urinal(new_position: Vector2) -> void:
 
 func _disable() -> void:
 	set_physics_process(false)
-	set_process_unhandled_key_input(false)
+	set_process_input(false)
 	$CollisionShape2D.set_deferred("disabled", true)
 
 
