@@ -44,7 +44,7 @@ func _spawn_player() -> void:
 func _end_game() -> void:
 	get_tree().call_group("obstacle_lane", "stop_spawning")
 	await $HUD.show_message("game over", 5)
-	GameManager.main_scene.load_scene(Main.Scene.MAIN_MENU)
+	GameManager.main_scene.load_scene(Main.Scene.END)
 
 
 func _reset_timer() -> void:
