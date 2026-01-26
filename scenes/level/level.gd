@@ -7,6 +7,7 @@ extends Node
 @export_category("Level")
 @export var next_level: Main.Scene
 @export var start_time := 30.0
+@export var urinals := 4
 
 var _urinals_reached := 0
 var _player: CharacterBody2D
@@ -15,6 +16,7 @@ var _player: CharacterBody2D
 
 
 func _ready() -> void:
+	$HUD.change_score(GameManager.score)
 	_spawn_player()
 	_reset_timer()
 
@@ -50,12 +52,21 @@ func _reset_timer() -> void:
 	$HUD.change_timer(start_time, start_time)
 
 
+func _win_level() -> void:
+	$TimeLeft.stop()
+	GameManager.score += floor(_time_left * 10.0)
+	await $HUD.show_message("Nice!", 2)
+	await $HUD.show_message("Score: " + str(GameManager.score), 3)
+	GameManager.lives = GameManager.start_lives
+	GameManager.main_scene.load_scene(next_level)
+
+
 func _on_player_died() -> void:
 	GameManager.lives -= 1
 	$HUD.change_lives(GameManager.lives)
-	if GameManager.lives <= 0:
+	if GameManager.lives <= 0 or GameManager.lives < urinals - _urinals_reached:
 		GameManager.reset()
-		_end_game()
+		await _end_game()
 		return
 
 	_reset_timer()
@@ -64,13 +75,13 @@ func _on_player_died() -> void:
 
 func _on_player_got_to_urinal() -> void:
 	_urinals_reached += 1
+	GameManager.lives -= 1
+	$HUD.change_lives(GameManager.lives)
 	GameManager.score += 100
+	$HUD.change_score(GameManager.score)
 
-	if _urinals_reached >= 4:
-		await $HUD.show_message("Nice!", 2)
-		await $HUD.show_message("Score: " + str(GameManager.score), 3)
-		GameManager.score += floor(_time_left * 10.0)
-		GameManager.main_scene.load_scene(next_level)
+	if _urinals_reached >= urinals:
+		_win_level()
 		return
 
 	_reset_timer()
@@ -87,4 +98,3 @@ func _on_time_left_timeout() -> void:
 	$HUD.change_timer(_time_left)
 	if _time_left < 0:
 		_player.die()
-		_reset_timer()

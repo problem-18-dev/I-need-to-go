@@ -2,12 +2,22 @@ class_name Obstacle
 extends Area2D
 
 
+@export_category("Entity")
 @export var speed: float
+@export_category("Audio")
+@export var sound_to_play: AudioManager.SFX
+@export var chance_to_play := 0.25
 
 var _ready_to_die := false
 var _direction := Vector2.LEFT
 
 @onready var _current_speed := speed
+
+
+func _ready() -> void:
+	var should_make_sound := randf() < chance_to_play
+	if should_make_sound and sound_to_play:
+		AudioManager.play(sound_to_play)
 
 
 func _process(delta: float) -> void:

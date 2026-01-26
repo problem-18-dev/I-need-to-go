@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://call54n4tvp4u" path="res://scenes/phone_zombie/phone_zombie.tscn" id="6_m04wh"]
 
 [node name="LevelOne" instance=ExtResource("1_4h2c1")]
-next_level = 3
+next_level = 4
 
 [node name="PhoneZombiesLane" parent="Game/PhoneZombies" index="1" instance=ExtResource("2_nxahq")]
-position = Vector2(536, 216)
+position = Vector2(536, 208)
 obstacle_to_spawn = ExtResource("6_m04wh")
 speed = 60
 
@@ -27,6 +27,7 @@ position = Vector2(536, 312)
 obstacle_to_spawn = ExtResource("5_4wl7b")
 spawn_frequency = 2.75
 speed = 75
+sound_to_play = 4
 
 [node name="BikersLane2" parent="Game/Bikers" index="2" instance=ExtResource("2_nxahq")]
 position = Vector2(536, 248)
@@ -50,6 +51,7 @@ position = Vector2(-128, 392)
 obstacle_to_spawn = ExtResource("4_tfbuk")
 spawn_frequency = 2.5
 go_right = true
+sound_to_play = 3
 
 [node name="VehiclesLane2" parent="Game/Vehicles" index="3" instance=ExtResource("2_nxahq")]
 position = Vector2(624, 440)

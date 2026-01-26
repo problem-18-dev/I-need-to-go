@@ -1,16 +1,21 @@
 class_name Main
 extends Node
 
-enum Scene {MAIN_MENU, INFO_MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, END}
+
+signal scene_changed(scene: Scene)
+
+enum Scene {SPLASH, MAIN_MENU, INFO_MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, END}
 
 @export var first_scene := Scene.MAIN_MENU
 
 var scenes := {
+	Scene.SPLASH: "res://hud/splash.tscn",
 	Scene.MAIN_MENU: "res://hud/main_menu.tscn",
 	Scene.INFO_MENU: "res://hud/info_menu.tscn",
 	Scene.LEVEL_ONE: "res://levels/level_one.tscn",
 	Scene.LEVEL_TWO: "res://levels/level_two.tscn",
 	Scene.LEVEL_THREE: "res://levels/level_three.tscn",
+	Scene.END: "res://hud/end_menu.tscn",
 }
 
 var current_scene: Node
@@ -32,3 +37,15 @@ func load_scene(scene: Scene) -> void:
 	var new_scene: PackedScene = load(scenes[scene])
 	current_scene = new_scene.instantiate()
 	add_child(current_scene)
+	scene_changed.emit(scene)
+
+
+func set_bus_db(bus: String, db: float) -> void:
+	var bus_index := AudioServer.get_bus_index(bus)
+	AudioServer.set_bus_volume_db(bus_index, db)
+
+
+func _on_scene_changed(scene: Main.Scene) -> void:
+	match scene:
+		Main.Scene.MAIN_MENU:
+			$MusicPlayer.play()

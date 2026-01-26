@@ -5,7 +5,7 @@ extends Node2D
 @export var spawn_frequency := 3.0
 @export var speed := 120
 @export var go_right := false
-
+@export var sound_to_play: AudioManager.SFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,4 +21,5 @@ func _on_timer_timeout() -> void:
 	if go_right:
 		obstacle.flip()
 	obstacle.speed = speed
+	obstacle.sound_to_play = sound_to_play
 	add_child(obstacle)

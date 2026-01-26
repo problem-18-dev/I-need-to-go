@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://boy8ljlgdseeg"]
+[gd_scene load_steps=13 format=3 uid="uid://boy8ljlgdseeg"]
 
 [ext_resource type="Texture2D" uid="uid://buvxs3pjr7p57" path="res://assets/images/hud/man_hud.png" id="1_6ca3a"]
 [ext_resource type="Script" uid="uid://6i4pi61cngpq" path="res://hud/hud.gd" id="1_318vg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://25t4j52ahaiq" path="res://assets/images/timer/timer_back.png" id="5_0ivg5"]
 [ext_resource type="Texture2D" uid="uid://bi3b81suld364" path="res://assets/images/timer/timer_progress.png" id="6_1kkc0"]
 [ext_resource type="Texture2D" uid="uid://dnkamigvupvng" path="res://assets/images/timer/timer_progress_close.png" id="7_0ivg5"]
+[ext_resource type="Texture2D" uid="uid://bl35271aolsyt" path="res://assets/images/joystick.png" id="8_1kkc0"]
 
 [sub_resource type="Animation" id="Animation_1kkc0"]
 length = 0.001
@@ -45,6 +46,9 @@ _data = {
 &"RESET": SubResource("Animation_1kkc0"),
 &"danger": SubResource("Animation_fjv1a")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kkc0"]
+size = Vector2(40, 25)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_318vg")
@@ -191,3 +195,50 @@ texture_progress = ExtResource("6_1kkc0")
 libraries = {
 &"": SubResource("AnimationLibrary_0ivg5")
 }
+
+[node name="MobileButtonsTexture" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.39215687)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -160.0
+offset_right = -8.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_1kkc0")
+
+[node name="MobileButtons" type="Node2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.39215687)
+
+[node name="MobileMoveDown" type="TouchScreenButton" parent="MobileButtons"]
+position = Vector2(427, 437)
+shape = SubResource("RectangleShape2D_1kkc0")
+action = "move_down"
+visibility_mode = 1
+
+[node name="MobileMoveLeft" type="TouchScreenButton" parent="MobileButtons"]
+position = Vector2(392, 403)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_1kkc0")
+action = "move_left"
+visibility_mode = 1
+
+[node name="MobileMoveRight" type="TouchScreenButton" parent="MobileButtons"]
+position = Vector2(463, 403)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_1kkc0")
+action = "move_right"
+visibility_mode = 1
+
+[node name="MobileMoveUp" type="TouchScreenButton" parent="MobileButtons"]
+position = Vector2(427, 369)
+shape = SubResource("RectangleShape2D_1kkc0")
+action = "move_up"
+visibility_mode = 1

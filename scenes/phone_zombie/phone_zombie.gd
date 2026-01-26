@@ -1,6 +1,8 @@
 extends Obstacle
 
+
 var _anger_time := 1.5
+var _is_angry := false
 
 
 func _ready() -> void:
@@ -11,6 +13,9 @@ func _physics_process(_delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		var collider: CharacterBody2D = $RayCast2D.get_collider()
 		collider.move_back()
+		if not _is_angry:
+			AudioManager.play(AudioManager.SFX.PHONE_ZOMBIE)
+			_is_angry = true
 		$AngerSprite2D.show()
 		await get_tree().create_timer(_anger_time).timeout
 		$AngerSprite2D.hide()

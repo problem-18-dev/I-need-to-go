@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="3_ikojo"]
 
 [node name="LevelTwo" instance=ExtResource("1_ijs4g")]
-next_level = 4
+next_level = 5
 
 [node name="PhoneZombiesLane" parent="Game/PhoneZombies" index="1" instance=ExtResource("2_jun80")]
 position = Vector2(536, 216)
@@ -27,6 +27,7 @@ position = Vector2(536, 312)
 obstacle_to_spawn = ExtResource("3_d0lx0")
 spawn_frequency = 2.25
 speed = 75
+sound_to_play = 4
 
 [node name="BikersLane2" parent="Game/Bikers" index="2" instance=ExtResource("2_jun80")]
 position = Vector2(536, 248)
@@ -54,6 +55,7 @@ position = Vector2(-128, 392)
 obstacle_to_spawn = ExtResource("3_ikojo")
 spawn_frequency = 2.0
 go_right = true
+sound_to_play = 3
 
 [node name="VehiclesLane2" parent="Game/Vehicles" index="4" instance=ExtResource("2_jun80")]
 position = Vector2(640, 440)
