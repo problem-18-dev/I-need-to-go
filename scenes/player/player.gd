@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _unhandled_key_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if _is_moving:
 		return
 
@@ -60,6 +60,7 @@ func start(start_position: Vector2) -> void:
 func die() -> void:
 	_disable()
 	$AnimationPlayer.play("death")
+	AudioManager.play(AudioManager.SFX.DEATH)
 	died.emit()
 
 
@@ -90,6 +91,7 @@ func _destroy() -> void:
 
 func _pee() -> void:
 	_disable()
+	AudioManager.play(AudioManager.SFX.PEE)
 	$AnimatedSprite2D.play("pee")
 	await $AnimatedSprite2D.animation_finished
 	$AnimatedSprite2D.play("pee_loop")
@@ -114,6 +116,7 @@ func _try_move(direction: Vector2, animation: String, flip_h: bool = false) -> v
 		next_position += direction * move_distance
 		$AnimatedSprite2D.play(animation)
 		$AnimatedSprite2D.flip_h = flip_h
+		AudioManager.play(AudioManager.SFX.MOVE)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

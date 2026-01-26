@@ -1,6 +1,12 @@
 extends CanvasLayer
 
 
+func _ready() -> void:
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
+		$MobileButtonsTexture.show()
+		$MobileButtons.show()
+
+
 func change_lives(lives: int) -> void:
 	for i in $Lives.get_child_count():
 		var life: TextureRect = $Lives.get_child(i)

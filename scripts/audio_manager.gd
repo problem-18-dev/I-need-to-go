@@ -4,13 +4,12 @@ extends Node
 enum SFX { MOVE, GROAN, PHONE_ZOMBIE, CAR, BIKER, DEATH, PEE }
 
 var sfx: Dictionary[SFX, String] = {
-	SFX.MOVE: "move",
-	SFX.GROAN: "groan",
-	SFX.PHONE_ZOMBIE: "phone_zombie",
-	SFX.CAR: "car",
-	SFX.BIKER: "biker",
-	SFX.DEATH: "death",
-	SFX.PEE: "pee"
+	SFX.MOVE: "res://assets/sfx/move.ogg",
+	SFX.PHONE_ZOMBIE: "res://assets/sfx/phone_zombie.ogg",
+	SFX.CAR: "res://assets/sfx/car.ogg",
+	SFX.BIKER: "res://assets/sfx/biker.ogg",
+	SFX.DEATH: "res://assets/sfx/death.ogg",
+	SFX.PEE: "res://assets/sfx/pee.ogg",
 }
 
 
