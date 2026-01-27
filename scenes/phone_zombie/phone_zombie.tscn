@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://call54n4tvp4u"]
+[gd_scene format=3 uid="uid://call54n4tvp4u"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_eev11"]
 [ext_resource type="Script" uid="uid://bh01j18x1cd4d" path="res://scenes/phone_zombie/phone_zombie.gd" id="2_5rshu"]
@@ -72,14 +72,14 @@ animations = [{
 "speed": 7.5
 }]
 
-[node name="PhoneZombie" instance=ExtResource("1_eev11")]
+[node name="PhoneZombie" unique_id=279195522 instance=ExtResource("1_eev11")]
 script = ExtResource("2_5rshu")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=156974674]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_6ik0x")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
 position = Vector2(0, -40)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_h812c")
@@ -87,15 +87,15 @@ animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.015419568
 
-[node name="RayCast2D" type="RayCast2D" parent="." index="2"]
+[node name="RayCast2D" type="RayCast2D" parent="." index="2" unique_id=918078370]
 position = Vector2(0, -10)
 rotation = 1.5707964
 target_position = Vector2(0, 40)
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="3" unique_id=69902232]
 position = Vector2(21, -10)
 
-[node name="AngerSprite2D" type="Sprite2D" parent="." index="4"]
+[node name="AngerSprite2D" type="Sprite2D" parent="." index="4" unique_id=653723165]
 position = Vector2(-4, -56)
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("4_6ik0x")

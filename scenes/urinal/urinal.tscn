@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4ksgenm87x7y"]
+[gd_scene format=3 uid="uid://d4ksgenm87x7y"]
 
 [ext_resource type="Script" uid="uid://dupuiaw02aa5f" path="res://scenes/urinal/urinal.gd" id="1_yfsqg"]
 [ext_resource type="Texture2D" uid="uid://bg6q567e8t5ll" path="res://assets/images/urinal/urinal_closed.png" id="2_hjb86"]
@@ -7,22 +7,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfsqg"]
 size = Vector2(128, 120)
 
-[node name="Urinal" type="Area2D"]
+[node name="Urinal" type="Area2D" unique_id=1549746867]
 collision_layer = 0
 script = ExtResource("1_yfsqg")
 closed_texture = ExtResource("2_hjb86")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=561383329]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_yfsqg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=446659880]
 texture = ExtResource("2_yfsqg")
 
-[node name="DownMarker2D" type="Marker2D" parent="."]
+[node name="DownMarker2D" type="Marker2D" parent="." unique_id=1727530732]
 position = Vector2(32, 56)
 
-[node name="UpMarker2D" type="Marker2D" parent="."]
+[node name="UpMarker2D" type="Marker2D" parent="." unique_id=780661715]
 position = Vector2(32, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

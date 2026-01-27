@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boy8ljlgdseeg"]
+[gd_scene format=3 uid="uid://boy8ljlgdseeg"]
 
 [ext_resource type="Texture2D" uid="uid://buvxs3pjr7p57" path="res://assets/images/hud/man_hud.png" id="1_6ca3a"]
 [ext_resource type="Script" uid="uid://6i4pi61cngpq" path="res://hud/hud.gd" id="1_318vg"]
@@ -50,17 +50,17 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kkc0"]
 size = Vector2(40, 25)
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=321191228]
 script = ExtResource("1_318vg")
 
-[node name="Lives" type="HBoxContainer" parent="."]
+[node name="Lives" type="HBoxContainer" parent="." unique_id=1935840597]
 offset_top = 484.0
 offset_right = 144.0
 offset_bottom = 508.0
 size_flags_horizontal = 0
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="Lives"]
+[node name="TextureRect" type="TextureRect" parent="Lives" unique_id=1078165903]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -68,7 +68,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="Lives"]
+[node name="TextureRect2" type="TextureRect" parent="Lives" unique_id=2037458746]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,7 +76,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="Lives"]
+[node name="TextureRect3" type="TextureRect" parent="Lives" unique_id=1481169627]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -84,7 +84,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect4" type="TextureRect" parent="Lives"]
+[node name="TextureRect4" type="TextureRect" parent="Lives" unique_id=2121101057]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -92,7 +92,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect5" type="TextureRect" parent="Lives"]
+[node name="TextureRect5" type="TextureRect" parent="Lives" unique_id=1288777927]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -100,7 +100,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect6" type="TextureRect" parent="Lives"]
+[node name="TextureRect6" type="TextureRect" parent="Lives" unique_id=617315507]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -108,7 +108,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect7" type="TextureRect" parent="Lives"]
+[node name="TextureRect7" type="TextureRect" parent="Lives" unique_id=1776804072]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -116,7 +116,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect8" type="TextureRect" parent="Lives"]
+[node name="TextureRect8" type="TextureRect" parent="Lives" unique_id=923048045]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -124,7 +124,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="TextureRect9" type="TextureRect" parent="Lives"]
+[node name="TextureRect9" type="TextureRect" parent="Lives" unique_id=799821239]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -132,7 +132,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_6ca3a")
 expand_mode = 4
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="." unique_id=398683324]
 offset_left = 232.0
 offset_top = 480.0
 offset_right = 282.0
@@ -143,7 +143,7 @@ text = "SCORE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="." unique_id=1440534699]
 offset_left = 232.0
 offset_top = 494.0
 offset_right = 282.0
@@ -155,7 +155,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Message" type="Label" parent="."]
+[node name="Message" type="Label" parent="." unique_id=1952709519]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -174,7 +174,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=645559502]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -191,12 +191,10 @@ texture_under = ExtResource("4_fjv1a")
 texture_over = ExtResource("5_0ivg5")
 texture_progress = ExtResource("6_1kkc0")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0ivg5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2093330096]
+libraries/ = SubResource("AnimationLibrary_0ivg5")
 
-[node name="MobileButtonsTexture" type="TextureRect" parent="."]
+[node name="MobileButtonsTexture" type="TextureRect" parent="." unique_id=1603202164]
 visible = false
 modulate = Color(1, 1, 1, 0.39215687)
 anchors_preset = 3
@@ -213,31 +211,31 @@ grow_vertical = 0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_1kkc0")
 
-[node name="MobileButtons" type="Node2D" parent="."]
+[node name="MobileButtons" type="Node2D" parent="." unique_id=2055613302]
 visible = false
 modulate = Color(1, 1, 1, 0.39215687)
 
-[node name="MobileMoveDown" type="TouchScreenButton" parent="MobileButtons"]
+[node name="MobileMoveDown" type="TouchScreenButton" parent="MobileButtons" unique_id=589011779]
 position = Vector2(427, 437)
 shape = SubResource("RectangleShape2D_1kkc0")
 action = "move_down"
 visibility_mode = 1
 
-[node name="MobileMoveLeft" type="TouchScreenButton" parent="MobileButtons"]
+[node name="MobileMoveLeft" type="TouchScreenButton" parent="MobileButtons" unique_id=891168522]
 position = Vector2(392, 403)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_1kkc0")
 action = "move_left"
 visibility_mode = 1
 
-[node name="MobileMoveRight" type="TouchScreenButton" parent="MobileButtons"]
+[node name="MobileMoveRight" type="TouchScreenButton" parent="MobileButtons" unique_id=1411787632]
 position = Vector2(463, 403)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_1kkc0")
 action = "move_right"
 visibility_mode = 1
 
-[node name="MobileMoveUp" type="TouchScreenButton" parent="MobileButtons"]
+[node name="MobileMoveUp" type="TouchScreenButton" parent="MobileButtons" unique_id=1812065912]
 position = Vector2(427, 369)
 shape = SubResource("RectangleShape2D_1kkc0")
 action = "move_up"

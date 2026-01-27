@@ -1,22 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpro0h54ppmqc"]
+[gd_scene format=3 uid="uid://cpro0h54ppmqc"]
 
 [ext_resource type="Script" uid="uid://cs1v8v51w5aku" path="res://scenes/obstacle/obstacle.gd" id="1_f7iuw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f7iuw"]
 
-[node name="Obstacle" type="Area2D"]
+[node name="Obstacle" type="Area2D" unique_id=1275812117]
 process_mode = 1
 collision_layer = 2
 input_pickable = false
 script = ExtResource("1_f7iuw")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156974674]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1237012675]
 sprite_frames = SubResource("SpriteFrames_f7iuw")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=69902232]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

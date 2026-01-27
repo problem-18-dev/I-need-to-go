@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://x4drvyfljkq7"]
+[gd_scene format=3 uid="uid://x4drvyfljkq7"]
 
 [ext_resource type="Texture2D" uid="uid://bvnvbt32xu66x" path="res://assets/images/splash.png" id="1_8yica"]
 [ext_resource type="Script" uid="uid://c61deqqb7t60c" path="res://hud/splash.gd" id="1_k0l7n"]
@@ -82,10 +82,10 @@ animations = [{
 "speed": 3.5
 }]
 
-[node name="Splash" type="CanvasLayer"]
+[node name="Splash" type="CanvasLayer" unique_id=271092924]
 script = ExtResource("1_k0l7n")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1726000913]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,7 +93,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_8yica")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1863543671]
 position = Vector2(256, 256)
 sprite_frames = SubResource("SpriteFrames_4cne5")
 autoplay = "default"
