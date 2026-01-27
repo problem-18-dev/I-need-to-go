@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2gwwmdtf0qhl"]
+[gd_scene format=3 uid="uid://c2gwwmdtf0qhl"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_nl00s"]
 [ext_resource type="Script" uid="uid://b65b7k1sfaolu" path="res://scenes/biker/biker.gd" id="2_m4ak3"]
@@ -69,7 +69,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Biker" instance=ExtResource("1_nl00s")]
+[node name="Biker" unique_id=271350237 instance=ExtResource("1_nl00s")]
 script = ExtResource("2_m4ak3")
 
 [node name="CollisionShape2D" parent="." index="0"]

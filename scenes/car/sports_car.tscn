@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://12hfduj785mb"]
+[gd_scene format=3 uid="uid://12hfduj785mb"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_2otwt"]
 [ext_resource type="Texture2D" uid="uid://djeslbt4p32ch" path="res://assets/images/cars/sports_car.png" id="2_2otwt"]
@@ -28,7 +28,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SportsCar" instance=ExtResource("1_2otwt")]
+[node name="SportsCar" unique_id=640972693 instance=ExtResource("1_2otwt")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-1, -12)

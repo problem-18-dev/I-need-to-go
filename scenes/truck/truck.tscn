@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfpbpl8txmucx"]
+[gd_scene format=3 uid="uid://bfpbpl8txmucx"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_nl00s"]
 [ext_resource type="Script" uid="uid://i5a32ehiy6o5" path="res://scenes/truck/truck.gd" id="2_oim3y"]
@@ -29,18 +29,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Truck" instance=ExtResource("1_nl00s")]
+[node name="Truck" unique_id=2019431813 instance=ExtResource("1_nl00s")]
 script = ExtResource("2_oim3y")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=156974674]
 position = Vector2(3, -12)
 shape = SubResource("RectangleShape2D_nl00s")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
 position = Vector2(7, -57.5)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_3ida5")
 autoplay = "default"
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=69902232]
 position = Vector2(110, -11)

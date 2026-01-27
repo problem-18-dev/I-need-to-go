@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cbbyts6c0gnmp"]
+[gd_scene format=3 uid="uid://cbbyts6c0gnmp"]
 
 [ext_resource type="Script" uid="uid://c5bipvgnp4q7b" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://cteni1t2ksnge" path="res://assets/images/player/man_death.png" id="2_0owmy"]
@@ -320,54 +320,52 @@ _data = {
 &"death": SubResource("Animation_0owmy")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1107840088]
 process_mode = 1
 collision_mask = 0
 script = ExtResource("1_dovo2")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1739828714]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_dovo2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=935104070]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_lvxji")
 animation = &"death"
 autoplay = "idle"
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=729396323]
 
-[node name="LeftRayCast2D" type="RayCast2D" parent="."]
+[node name="LeftRayCast2D" type="RayCast2D" parent="." unique_id=1848185422]
 rotation = 1.5707964
 target_position = Vector2(0, 32)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="RightRayCast2D" type="RayCast2D" parent="."]
+[node name="RightRayCast2D" type="RayCast2D" parent="." unique_id=1891175745]
 rotation = -1.5707964
 target_position = Vector2(0, 32)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="TopRayCast2D" type="RayCast2D" parent="."]
+[node name="TopRayCast2D" type="RayCast2D" parent="." unique_id=734643674]
 rotation = -3.1415927
 target_position = Vector2(0, 32)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="BottomRayCast2D" type="RayCast2D" parent="."]
+[node name="BottomRayCast2D" type="RayCast2D" parent="." unique_id=2114451280]
 target_position = Vector2(0, 32)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qek5x")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=390953204]
+libraries/ = SubResource("AnimationLibrary_qek5x")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
