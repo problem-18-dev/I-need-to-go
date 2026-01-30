@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://12hfduj785mb"]
+
+[ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_2otwt"]
+[ext_resource type="Texture2D" uid="uid://dxo663nwrwwlh" path="res://assets/images/new/racing_car_brown.png" id="2_54uci"]
+[ext_resource type="Script" uid="uid://eavhd6x7565m" path="res://scenes/car/racing_car.gd" id="2_ye7ms"]
+[ext_resource type="Texture2D" uid="uid://bi66x52y0j7kt" path="res://assets/images/new/racing_car_pink.png" id="3_ye7ms"]
+[ext_resource type="Texture2D" uid="uid://dqel1ptok5dhx" path="res://assets/images/new/racing_car_white.png" id="4_ywfdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2otwt"]
+size = Vector2(122, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1vli"]
+atlas = ExtResource("2_54uci")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt8u6"]
+atlas = ExtResource("2_54uci")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gsxk"]
+atlas = ExtResource("3_ye7ms")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro38j"]
+atlas = ExtResource("3_ye7ms")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qpfr"]
+atlas = ExtResource("4_ywfdn")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2uw1"]
+atlas = ExtResource("4_ywfdn")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xilmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1vli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt8u6")
+}],
+"loop": true,
+"name": &"brown",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gsxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro38j")
+}],
+"loop": true,
+"name": &"pink",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qpfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2uw1")
+}],
+"loop": true,
+"name": &"white",
+"speed": 15.0
+}]
+
+[node name="RacingCar" unique_id=640972693 instance=ExtResource("1_2otwt")]
+script = ExtResource("2_ye7ms")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=156974674]
+position = Vector2(-1, -10)
+shape = SubResource("RectangleShape2D_2otwt")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_xilmd")
+animation = &"white"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=69902232]
+position = Vector2(62, -5)
+rect = Rect2(-6, -5, 12, 10)

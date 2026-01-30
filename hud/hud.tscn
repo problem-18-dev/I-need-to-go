@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://boy8ljlgdseeg"]
 
-[ext_resource type="Texture2D" uid="uid://buvxs3pjr7p57" path="res://assets/images/hud/man_hud.png" id="1_6ca3a"]
 [ext_resource type="Script" uid="uid://6i4pi61cngpq" path="res://hud/hud.gd" id="1_318vg"]
 [ext_resource type="Theme" uid="uid://bdcm65s0mxpg1" path="res://hud/theme.tres" id="2_2gk58"]
-[ext_resource type="Texture2D" uid="uid://dur38sk155r3x" path="res://assets/images/timer/timer_art.png" id="4_fjv1a"]
-[ext_resource type="Texture2D" uid="uid://25t4j52ahaiq" path="res://assets/images/timer/timer_back.png" id="5_0ivg5"]
+[ext_resource type="Texture2D" uid="uid://b7u64hw2m6em7" path="res://assets/images/new/player_life.png" id="2_qv4qp"]
+[ext_resource type="Texture2D" uid="uid://c2m08xk31sijv" path="res://assets/images/new/progress_bar_under.png" id="4_1kkc0"]
 [ext_resource type="Texture2D" uid="uid://bi3b81suld364" path="res://assets/images/timer/timer_progress.png" id="6_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://dnkamigvupvng" path="res://assets/images/timer/timer_progress_close.png" id="7_0ivg5"]
+[ext_resource type="Texture2D" uid="uid://b061dsxn6b8nb" path="res://assets/images/new/progress_bar_progress_red.png" id="7_qv4qp"]
 [ext_resource type="Texture2D" uid="uid://bl35271aolsyt" path="res://assets/images/joystick.png" id="8_1kkc0"]
+[ext_resource type="Texture2D" uid="uid://0qd1jbeglrmc" path="res://assets/images/new/progress_bar_progress.png" id="8_qv4qp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1kkc0"]
+load_path = "res://.godot/imported/progress_bar_over.png-d7f2104d3fd24d0ff3d262b2eabbf541.ctex"
 
 [sub_resource type="Animation" id="Animation_1kkc0"]
 length = 0.001
@@ -38,7 +41,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("7_0ivg5"), ExtResource("6_1kkc0")]
+"values": [ExtResource("7_qv4qp"), ExtResource("8_qv4qp")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ivg5"]
@@ -54,83 +57,88 @@ size = Vector2(40, 25)
 script = ExtResource("1_318vg")
 
 [node name="Lives" type="HBoxContainer" parent="." unique_id=1935840597]
-offset_top = 484.0
-offset_right = 144.0
-offset_bottom = 508.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -33.0
+offset_right = 203.0
+offset_bottom = -3.0
+grow_vertical = 0
 size_flags_horizontal = 0
-theme_override_constants/separation = 0
+theme_override_constants/separation = 8
 
 [node name="TextureRect" type="TextureRect" parent="Lives" unique_id=1078165903]
-custom_minimum_size = Vector2(24, 0)
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Lives" unique_id=2037458746]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect2" type="TextureRect" parent="Lives" unique_id=687328570]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Lives" unique_id=1481169627]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect3" type="TextureRect" parent="Lives" unique_id=223853425]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="Lives" unique_id=2121101057]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect4" type="TextureRect" parent="Lives" unique_id=530634509]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="Lives" unique_id=1288777927]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect5" type="TextureRect" parent="Lives" unique_id=1269774164]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Lives" unique_id=617315507]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect6" type="TextureRect" parent="Lives" unique_id=423578932]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect7" type="TextureRect" parent="Lives" unique_id=1776804072]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect7" type="TextureRect" parent="Lives" unique_id=1737729033]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect8" type="TextureRect" parent="Lives" unique_id=923048045]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect8" type="TextureRect" parent="Lives" unique_id=394490187]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
-[node name="TextureRect9" type="TextureRect" parent="Lives" unique_id=799821239]
-custom_minimum_size = Vector2(24, 0)
+[node name="TextureRect9" type="TextureRect" parent="Lives" unique_id=637396149]
+custom_minimum_size = Vector2(15, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_6ca3a")
-expand_mode = 4
+texture = ExtResource("2_qv4qp")
+expand_mode = 1
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=398683324]
 offset_left = 232.0
@@ -180,15 +188,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -29.0
-offset_right = -16.0
-offset_bottom = 11.0
+offset_left = -152.0
+offset_top = -28.0
+offset_right = -8.0
+offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
-max_value = 60.0
-texture_under = ExtResource("4_fjv1a")
-texture_over = ExtResource("5_0ivg5")
+max_value = 30.0
+rounded = true
+texture_under = ExtResource("4_1kkc0")
+texture_over = SubResource("CompressedTexture2D_1kkc0")
 texture_progress = ExtResource("6_1kkc0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2093330096]

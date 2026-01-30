@@ -28,6 +28,7 @@ window/size/viewport_height=512
 window/size/window_width_override=1024
 window/size/window_height_override=1024
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 window/handheld/orientation=1
 
@@ -78,7 +79,7 @@ pointing/emulate_touch_from_mouse=true
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="obstacle"
-2d_physics/layer_3="urinal"
+2d_physics/layer_3="wall"
 
 [physics]
 

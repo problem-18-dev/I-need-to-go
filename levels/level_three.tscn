@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhghokv32rcf8"]
 
 [ext_resource type="PackedScene" uid="uid://crd5p4i6mdrot" path="res://scenes/level/level.tscn" id="1_yxx76"]
-[ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/sports_car.tscn" id="2_ncmil"]
+[ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/racing_car.tscn" id="2_ncmil"]
 [ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="3_bvjaj"]
 [ext_resource type="PackedScene" uid="uid://call54n4tvp4u" path="res://scenes/phone_zombie/phone_zombie.tscn" id="3_t8sbe"]
 [ext_resource type="PackedScene" uid="uid://c2gwwmdtf0qhl" path="res://scenes/biker/biker.tscn" id="3_y5xn8"]

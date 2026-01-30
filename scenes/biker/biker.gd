@@ -1,7 +1,7 @@
 extends Obstacle
 
 
-var animations := ['blue', 'green', 'darkblue']
+var animations := ['red', 'green', 'blue']
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

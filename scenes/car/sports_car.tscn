@@ -1,43 +1,86 @@
-[gd_scene format=3 uid="uid://12hfduj785mb"]
+[gd_scene format=3 uid="uid://datkmkduq8t2h"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_2otwt"]
-[ext_resource type="Texture2D" uid="uid://djeslbt4p32ch" path="res://assets/images/cars/sports_car.png" id="2_2otwt"]
+[ext_resource type="Script" uid="uid://c0wiyvvuhu22u" path="res://scenes/car/sports_car.gd" id="2_dvmpw"]
+[ext_resource type="Texture2D" uid="uid://bg4ibqrpd763l" path="res://assets/images/new/sports_car_blue.png" id="3_66fjf"]
+[ext_resource type="Texture2D" uid="uid://duhkmsf84dq6e" path="res://assets/images/new/sports_car_green.png" id="4_dvmpw"]
+[ext_resource type="Texture2D" uid="uid://7hfjhiw5khyr" path="res://assets/images/new/sports_car_orange.png" id="5_xilmd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2otwt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhfra"]
 size = Vector2(114, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_66fjf"]
-atlas = ExtResource("2_2otwt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygqas"]
+atlas = ExtResource("3_66fjf")
 region = Rect2(0, 0, 128, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixo4y"]
-atlas = ExtResource("2_2otwt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfsum"]
+atlas = ExtResource("3_66fjf")
 region = Rect2(128, 0, 128, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xilmd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wev8d"]
+atlas = ExtResource("4_dvmpw")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy6to"]
+atlas = ExtResource("4_dvmpw")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eghrc"]
+atlas = ExtResource("5_xilmd")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p67o"]
+atlas = ExtResource("5_xilmd")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcn38"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_66fjf")
+"texture": SubResource("AtlasTexture_ygqas")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ixo4y")
+"texture": SubResource("AtlasTexture_tfsum")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"blue",
+"speed": 12.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wev8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy6to")
+}],
+"loop": true,
+"name": &"green",
+"speed": 12.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eghrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p67o")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 12.5
 }]
 
-[node name="SportsCar" unique_id=640972693 instance=ExtResource("1_2otwt")]
+[node name="SportsCar" unique_id=1285463900 instance=ExtResource("1_2otwt")]
+script = ExtResource("2_dvmpw")
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(-1, -12)
-shape = SubResource("RectangleShape2D_2otwt")
+[node name="CollisionShape2D" parent="." index="0" unique_id=156974674]
+position = Vector2(-2, -12)
+shape = SubResource("RectangleShape2D_yhfra")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
 position = Vector2(0, -32)
-sprite_frames = SubResource("SpriteFrames_xilmd")
+sprite_frames = SubResource("SpriteFrames_tcn38")
+animation = &"orange"
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
-position = Vector2(62, -5)
-rect = Rect2(-6, -5, 12, 10)
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=69902232]
+position = Vector2(68, -10)
+rect = Rect2(-13, -10, 26, 20)
