@@ -2,85 +2,85 @@
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_nl00s"]
 [ext_resource type="Script" uid="uid://b65b7k1sfaolu" path="res://scenes/biker/biker.gd" id="2_m4ak3"]
-[ext_resource type="Texture2D" uid="uid://co3d07ot0qd2n" path="res://assets/images/biker/biker_blue.png" id="2_nl00s"]
-[ext_resource type="Texture2D" uid="uid://3er64abqs32l" path="res://assets/images/biker/biker_green.png" id="4_4a2hw"]
-[ext_resource type="Texture2D" uid="uid://bijkqvsvpj06b" path="res://assets/images/biker/biker_darkblue.png" id="4_gtxuu"]
+[ext_resource type="Texture2D" uid="uid://b8txl0gyy4wvl" path="res://assets/images/new/biker_blue.png" id="3_gtxuu"]
+[ext_resource type="Texture2D" uid="uid://bmq1k5d1jlovg" path="res://assets/images/new/biker_green.png" id="4_rboll"]
+[ext_resource type="Texture2D" uid="uid://bpwudqrxno3xn" path="res://assets/images/new/biker_red.png" id="5_632lg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2ltg"]
 size = Vector2(48, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2ltg"]
-atlas = ExtResource("2_nl00s")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4ak3"]
-atlas = ExtResource("2_nl00s")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_632lg"]
-atlas = ExtResource("4_gtxuu")
-region = Rect2(0, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv62e"]
-atlas = ExtResource("4_gtxuu")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtxuu"]
-atlas = ExtResource("4_4a2hw")
+atlas = ExtResource("3_gtxuu")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rboll"]
-atlas = ExtResource("4_4a2hw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0ml5"]
+atlas = ExtResource("3_gtxuu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30gs4"]
+atlas = ExtResource("4_rboll")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bog0"]
+atlas = ExtResource("4_rboll")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0i5e"]
+atlas = ExtResource("5_632lg")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q3it"]
+atlas = ExtResource("5_632lg")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ga100"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h2ltg")
+"texture": SubResource("AtlasTexture_qv62e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m4ak3")
+"texture": SubResource("AtlasTexture_i0ml5")
 }],
 "loop": true,
 "name": &"blue",
-"speed": 6.0
+"speed": 7.5
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_632lg")
+"texture": SubResource("AtlasTexture_30gs4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qv62e")
-}],
-"loop": true,
-"name": &"darkblue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gtxuu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rboll")
+"texture": SubResource("AtlasTexture_5bog0")
 }],
 "loop": true,
 "name": &"green",
-"speed": 6.0
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0i5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q3it")
+}],
+"loop": true,
+"name": &"red",
+"speed": 7.5
 }]
 
 [node name="Biker" unique_id=271350237 instance=ExtResource("1_nl00s")]
 script = ExtResource("2_m4ak3")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=156974674]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_h2ltg")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
 position = Vector2(1, -24)
 sprite_frames = SubResource("SpriteFrames_ga100")
-animation = &"green"
+animation = &"blue"
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=69902232]
 position = Vector2(35, -9)
 rect = Rect2(-10, -8, 20, 16)

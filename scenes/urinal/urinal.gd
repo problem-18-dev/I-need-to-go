@@ -4,7 +4,7 @@ extends Area2D
 @export_category("Sprites")
 @export var closed_texture: Texture
 
-@onready var marker: Marker2D = [$DownMarker2D, $UpMarker2D].pick_random()
+@onready var marker: Marker2D = [$LeftMarker2D, $RightMarker2D].pick_random()
 
 
 func _on_body_entered(body: Node2D) -> void:

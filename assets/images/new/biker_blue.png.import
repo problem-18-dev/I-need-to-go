@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dakfirnuiic7b"
-path="res://.godot/imported/car.png-16849589adb9f2c1fff63dc85b20d1c9.ctex"
+uid="uid://b8txl0gyy4wvl"
+path="res://.godot/imported/biker_blue.png-1ebd65d4cf1b36f929d3bf1343794308.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cars/car.png"
-dest_files=["res://.godot/imported/car.png-16849589adb9f2c1fff63dc85b20d1c9.ctex"]
+source_file="res://assets/images/new/biker_blue.png"
+dest_files=["res://.godot/imported/biker_blue.png-1ebd65d4cf1b36f929d3bf1343794308.ctex"]
 
 [params]
 

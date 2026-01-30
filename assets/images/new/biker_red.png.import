@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqbx7hfm4l30g"
-path="res://.godot/imported/truck.png-4083f7de27e58e5a18c5ff4cb8c81367.ctex"
+uid="uid://bpwudqrxno3xn"
+path="res://.godot/imported/biker_red.png-4bf9a2d240b0a133cb52883c4035c2ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/truck/truck.png"
-dest_files=["res://.godot/imported/truck.png-4083f7de27e58e5a18c5ff4cb8c81367.ctex"]
+source_file="res://assets/images/new/biker_red.png"
+dest_files=["res://.godot/imported/biker_red.png-4bf9a2d240b0a133cb52883c4035c2ca.ctex"]
 
 [params]
 

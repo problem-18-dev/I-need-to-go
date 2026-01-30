@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c8mxkklwcy6fu" path="res://assets/images/hud/man_still_animation.png" id="5_t104u"]
 [ext_resource type="PackedScene" uid="uid://c2gwwmdtf0qhl" path="res://scenes/biker/biker.tscn" id="6_1878s"]
 [ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="7_1878s"]
-[ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/sports_car.tscn" id="8_vqkwl"]
+[ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/racing_car.tscn" id="8_vqkwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t104u"]
 texture = ExtResource("1_lxge1")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djeslbt4p32ch"
-path="res://.godot/imported/sports_car.png-782cd11ab097fc8b8d21065878574f6b.ctex"
+uid="uid://bl1xkai75ui1q"
+path="res://.godot/imported/phone_zombie.png-daa9b28649808d2d84792db60afbeb6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cars/sports_car.png"
-dest_files=["res://.godot/imported/sports_car.png-782cd11ab097fc8b8d21065878574f6b.ctex"]
+source_file="res://assets/images/new/phone_zombie.png"
+dest_files=["res://.godot/imported/phone_zombie.png-daa9b28649808d2d84792db60afbeb6d.ctex"]
 
 [params]
 

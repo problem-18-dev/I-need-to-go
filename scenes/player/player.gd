@@ -74,7 +74,7 @@ func move_back() -> void:
 func move_to_urinal(new_position: Vector2) -> void:
 	_reached_urinal = true
 	next_position = new_position
-	$AnimatedSprite2D.play("walk_vertical")
+	$AnimatedSprite2D.play("walk_side")
 	got_to_urinal.emit()
 
 
