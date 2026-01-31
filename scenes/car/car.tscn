@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_yr3gr"]
 [ext_resource type="Script" uid="uid://8aplac2hert0" path="res://scenes/car/car.gd" id="2_b3ski"]
-[ext_resource type="Texture2D" uid="uid://dri3a3b81p8cx" path="res://assets/images/new/car_red.png" id="3_tcn38"]
-[ext_resource type="Texture2D" uid="uid://d1urmomxaqmuj" path="res://assets/images/new/car_white.png" id="3_x7uf8"]
-[ext_resource type="Texture2D" uid="uid://4oqvvg7hpxi7" path="res://assets/images/new/car_yellow.png" id="5_u0012"]
+[ext_resource type="Texture2D" uid="uid://dri3a3b81p8cx" path="res://assets/sprites/car/car_red.png" id="3_tcn38"]
+[ext_resource type="Texture2D" uid="uid://d1urmomxaqmuj" path="res://assets/sprites/car/car_white.png" id="3_x7uf8"]
+[ext_resource type="Texture2D" uid="uid://4oqvvg7hpxi7" path="res://assets/sprites/car/car_yellow.png" id="5_u0012"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhfra"]
 size = Vector2(112, 24)

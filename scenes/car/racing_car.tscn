@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://12hfduj785mb"]
 
 [ext_resource type="PackedScene" uid="uid://cpro0h54ppmqc" path="res://scenes/obstacle/obstacle.tscn" id="1_2otwt"]
-[ext_resource type="Texture2D" uid="uid://dxo663nwrwwlh" path="res://assets/images/new/racing_car_brown.png" id="2_54uci"]
+[ext_resource type="Texture2D" uid="uid://dxo663nwrwwlh" path="res://assets/sprites/racing_car/racing_car_brown.png" id="2_54uci"]
 [ext_resource type="Script" uid="uid://eavhd6x7565m" path="res://scenes/car/racing_car.gd" id="2_ye7ms"]
-[ext_resource type="Texture2D" uid="uid://bi66x52y0j7kt" path="res://assets/images/new/racing_car_pink.png" id="3_ye7ms"]
-[ext_resource type="Texture2D" uid="uid://dqel1ptok5dhx" path="res://assets/images/new/racing_car_white.png" id="4_ywfdn"]
+[ext_resource type="Texture2D" uid="uid://bi66x52y0j7kt" path="res://assets/sprites/racing_car/racing_car_pink.png" id="3_ye7ms"]
+[ext_resource type="Texture2D" uid="uid://dqel1ptok5dhx" path="res://assets/sprites/racing_car/racing_car_white.png" id="4_ywfdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2otwt"]
 size = Vector2(110, 20)

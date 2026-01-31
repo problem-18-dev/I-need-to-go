@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckeqs0jmux5yo"
+path="res://.godot/imported/Vintage Porn.mp3-8e9e2f64e014fa2332cc0c53e072f671.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Vintage Porn.mp3"
+dest_files=["res://.godot/imported/Vintage Porn.mp3-8e9e2f64e014fa2332cc0c53e072f671.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

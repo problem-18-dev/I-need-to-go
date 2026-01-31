@@ -2,17 +2,19 @@
 
 [ext_resource type="Script" uid="uid://6i4pi61cngpq" path="res://hud/hud.gd" id="1_318vg"]
 [ext_resource type="Theme" uid="uid://bdcm65s0mxpg1" path="res://hud/theme.tres" id="2_2gk58"]
-[ext_resource type="Texture2D" uid="uid://b7u64hw2m6em7" path="res://assets/images/new/player_life.png" id="2_qv4qp"]
-[ext_resource type="Texture2D" uid="uid://c2m08xk31sijv" path="res://assets/images/new/progress_bar_under.png" id="4_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://bi3b81suld364" path="res://assets/images/timer/timer_progress.png" id="6_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://b061dsxn6b8nb" path="res://assets/images/new/progress_bar_progress_red.png" id="7_qv4qp"]
-[ext_resource type="Texture2D" uid="uid://bl35271aolsyt" path="res://assets/images/joystick.png" id="8_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://0qd1jbeglrmc" path="res://assets/images/new/progress_bar_progress.png" id="8_qv4qp"]
+[ext_resource type="Texture2D" uid="uid://b7u64hw2m6em7" path="res://assets/sprites/player/player_life.png" id="2_qv4qp"]
+[ext_resource type="Texture2D" uid="uid://c2m08xk31sijv" path="res://assets/sprites/hud/progress_bar_under.png" id="4_1kkc0"]
+[ext_resource type="Texture2D" uid="uid://b061dsxn6b8nb" path="res://assets/sprites/hud/progress_bar_progress_red.png" id="7_qv4qp"]
+[ext_resource type="Texture2D" uid="uid://bl35271aolsyt" path="res://assets/sprites/joystick.png" id="8_1kkc0"]
+[ext_resource type="Texture2D" uid="uid://0qd1jbeglrmc" path="res://assets/sprites/hud/progress_bar_progress.png" id="8_qv4qp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1kkc0"]
 load_path = "res://.godot/imported/progress_bar_over.png-d7f2104d3fd24d0ff3d262b2eabbf541.ctex"
 
-[sub_resource type="Animation" id="Animation_1kkc0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kkc0"]
+size = Vector2(40, 25)
+
+[sub_resource type="Animation" id="Animation_0ivg5"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -24,13 +26,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_1kkc0")]
+"values": [ExtResource("8_qv4qp")]
 }
 
-[sub_resource type="Animation" id="Animation_fjv1a"]
+[sub_resource type="Animation" id="Animation_1kkc0"]
 resource_name = "danger"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,14 +45,11 @@ tracks/0/keys = {
 "values": [ExtResource("7_qv4qp"), ExtResource("8_qv4qp")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ivg5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv4qp"]
 _data = {
-&"RESET": SubResource("Animation_1kkc0"),
-&"danger": SubResource("Animation_fjv1a")
+&"RESET": SubResource("Animation_0ivg5"),
+&"danger": SubResource("Animation_1kkc0")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kkc0"]
-size = Vector2(40, 25)
 
 [node name="HUD" type="CanvasLayer" unique_id=321191228]
 script = ExtResource("1_318vg")
@@ -170,13 +168,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -80.0
-offset_top = 32.0
 offset_right = 88.0
-offset_bottom = 68.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2gk58")
-theme_override_colors/font_color = Color(0.0627451, 0.047058824, 0.03137255, 1)
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -195,13 +192,11 @@ offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
 max_value = 30.0
+value = 15.0
 rounded = true
 texture_under = ExtResource("4_1kkc0")
 texture_over = SubResource("CompressedTexture2D_1kkc0")
-texture_progress = ExtResource("6_1kkc0")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2093330096]
-libraries/ = SubResource("AnimationLibrary_0ivg5")
+texture_progress = ExtResource("8_qv4qp")
 
 [node name="MobileButtonsTexture" type="TextureRect" parent="." unique_id=1603202164]
 visible = false
@@ -249,3 +244,6 @@ position = Vector2(427, 369)
 shape = SubResource("RectangleShape2D_1kkc0")
 action = "move_up"
 visibility_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1837068639]
+libraries/ = SubResource("AnimationLibrary_qv4qp")

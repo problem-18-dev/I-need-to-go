@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 
+@onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
+
+
 func _ready() -> void:
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$MobileButtonsTexture.show()
@@ -13,6 +16,10 @@ func change_lives(lives: int) -> void:
 		life.visible = true if i < lives else false
 
 
+func change_score(score: int) -> void:
+	$Score.text = str(score)
+	
+	
 func show_message(message: String, ttl = 0) -> void:
 	$Message.text = message
 	if ttl:
@@ -24,16 +31,12 @@ func hide_message() -> void:
 	$Message.text = ""
 
 
-func change_score(score: int) -> void:
-	$Score.text = str(score)
-
-
-func change_timer(new_value: int, max_value = null) -> void:
-	$TextureProgressBar.value = new_value
-
-	if max_value:
-		$AnimationPlayer.play("RESET")
-		$TextureProgressBar.max_value = max_value
-
-	if (new_value / $TextureProgressBar.max_value) < 0.3 and not $AnimationPlayer.is_playing():
+func change_timer(value: float) -> void:
+	texture_progress_bar.value += value
+	texture_progress_bar.value = clampf(texture_progress_bar.value, 0, 30.0)
+	
+	var new_value := texture_progress_bar.value
+	var max_value := texture_progress_bar.max_value
+	var is_low_on_time := bool(new_value / max_value <= 0.3)
+	if is_low_on_time and not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play("danger")

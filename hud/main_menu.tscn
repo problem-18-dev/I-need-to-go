@@ -2,15 +2,45 @@
 
 [ext_resource type="Script" uid="uid://cvy2fbkdfh46" path="res://hud/main_menu.gd" id="1_t104u"]
 [ext_resource type="Theme" uid="uid://bdcm65s0mxpg1" path="res://hud/theme.tres" id="2_m54ne"]
+[ext_resource type="Texture2D" uid="uid://dmdububejlmqh" path="res://assets/sprites/player/player_pee.png" id="4_6klr8"]
 [ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="5_i2xqr"]
-[ext_resource type="Texture2D" uid="uid://cteni1t2ksnge" path="res://assets/images/player/man_death.png" id="5_kem82"]
-[ext_resource type="Texture2D" uid="uid://ddfl4f2j6pchh" path="res://assets/images/new/player_idle.png" id="5_t104u"]
+[ext_resource type="Texture2D" uid="uid://ddfl4f2j6pchh" path="res://assets/sprites/player/player_idle.png" id="5_t104u"]
 [ext_resource type="PackedScene" uid="uid://c2gwwmdtf0qhl" path="res://scenes/biker/biker.tscn" id="6_1878s"]
+[ext_resource type="Texture2D" uid="uid://bm1bbajxetgfk" path="res://assets/sprites/player/player_death.png" id="7_4r7i2"]
 [ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="7_1878s"]
 [ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/racing_car.tscn" id="8_vqkwl"]
 [ext_resource type="PackedScene" uid="uid://jo0vwkms3tyr" path="res://scenes/tile_map.tscn" id="10_t104u"]
-[ext_resource type="Texture2D" uid="uid://cdd8duq5l3uun" path="res://assets/images/new/logo.png" id="11_4r7i2"]
-[ext_resource type="Texture2D" uid="uid://ctgxqi1keg6hy" path="res://assets/images/new/player_walk_horizontal.png" id="12_6klr8"]
+[ext_resource type="Texture2D" uid="uid://cdd8duq5l3uun" path="res://assets/sprites/hud/logo.png" id="11_4r7i2"]
+[ext_resource type="Texture2D" uid="uid://ctgxqi1keg6hy" path="res://assets/sprites/player/player_walk_horizontal.png" id="12_6klr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0hs1"]
+atlas = ExtResource("4_6klr8")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kesyw"]
+atlas = ExtResource("4_6klr8")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tpxi"]
+atlas = ExtResource("4_6klr8")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nycdm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0hs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kesyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tpxi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r7i2"]
 atlas = ExtResource("5_t104u")
@@ -116,16 +146,92 @@ tile_map_data = PackedByteArray("AAAAADwAAAAAAAQAAAAAAD0AAAAAAAUAAAABADwAAAABAAQ
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=127272354]
 
-[node name="StartLabel" type="Label" parent="UI" unique_id=1526937470]
+[node name="Info" type="Control" parent="UI" unique_id=416867488]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PerEachLabel" type="Label" parent="UI/Info" unique_id=2143931345]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 84.0
+offset_top = 80.0
+offset_right = 388.0
+offset_bottom = 233.0
+grow_horizontal = 2
+theme = ExtResource("2_m54ne")
+theme_override_colors/font_color = Color(0.0627451, 0.047058824, 0.03137255, 1)
+theme_override_font_sizes/font_size = 32
+text = "10 for moving
+100 for reaching urinal
+10 per second left"
+horizontal_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="UI/Info" unique_id=1167452129]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 84.0
+offset_top = 32.0
+offset_right = 388.0
+offset_bottom = 185.0
+grow_horizontal = 2
+theme = ExtResource("2_m54ne")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_font_sizes/font_size = 32
+text = "Points:"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="UI/Info" unique_id=1691904105]
+position = Vector2(496, 216)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_nycdm")
+autoplay = "default"
+frame_progress = 0.75120866
+
+[node name="InfoHumorLabel" type="Label" parent="UI/Info" unique_id=1017294079]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 371.99997
+offset_top = 160.0
+offset_right = 524.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.2617994
+theme = ExtResource("2_m54ne")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_font_sizes/font_size = 10
+text = "I love points.."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Intro" type="Control" parent="UI" unique_id=62962552]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartLabel" type="Label" parent="UI/Intro" unique_id=1526937470]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -35.0
-offset_right = 148.0
-offset_bottom = 79.0
+offset_left = 84.0
+offset_top = 201.0
+offset_right = 384.0
+offset_bottom = 315.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_m54ne")
@@ -137,7 +243,48 @@ P to pause"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="HumorLabel" type="Label" parent="UI" unique_id=2145761510]
+[node name="BathroomLabel" type="Label" parent="UI/Intro" unique_id=872269356]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 316.0
+offset_top = 24.0
+offset_right = 468.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 0.2617994
+theme = ExtResource("2_m54ne")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_font_sizes/font_size = 12
+text = "to the bathroom!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="I" type="AnimatedSprite2D" parent="UI/Intro" unique_id=737696496]
+texture_filter = 1
+position = Vector2(72, 136)
+sprite_frames = SubResource("SpriteFrames_vqkwl")
+autoplay = "default"
+
+[node name="Logo" type="Sprite2D" parent="UI/Intro" unique_id=956297876]
+texture_filter = 1
+position = Vector2(280.00003, 157)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("11_4r7i2")
+
+[node name="PanicGuy" type="AnimatedSprite2D" parent="." unique_id=1661804877]
+position = Vector2(-32, 376)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_q0hs1")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.26795578
+
+[node name="HumorLabel" type="Label" parent="." unique_id=2145761510]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -156,99 +303,34 @@ text = "I really did need to go.."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BathroomLabel" type="Label" parent="UI" unique_id=872269356]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = -448.0
-offset_right = 232.0
-offset_bottom = -425.0
-grow_horizontal = 2
-grow_vertical = 0
-rotation = 0.2617994
-theme = ExtResource("2_m54ne")
-theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
-theme_override_font_sizes/font_size = 12
-text = "to the bathroom!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InfoLabel" type="Label" parent="UI" unique_id=1167452129]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -152.0
-offset_top = 32.0
-offset_right = 152.0
-offset_bottom = 185.0
-grow_horizontal = 2
-theme = ExtResource("2_m54ne")
-theme_override_colors/font_color = Color(0.0627451, 0.047058824, 0.03137255, 1)
-theme_override_font_sizes/font_size = 32
-text = "Points:
-10 for moving
-100 for reaching urinal
-10 per second left"
-horizontal_alignment = 1
-
-[node name="I" type="AnimatedSprite2D" parent="UI" unique_id=737696496]
-texture_filter = 1
-position = Vector2(72, 136)
-sprite_frames = SubResource("SpriteFrames_vqkwl")
-autoplay = "default"
-
-[node name="Logo" type="Sprite2D" parent="UI" unique_id=956297876]
-texture_filter = 1
-position = Vector2(280.00003, 157)
-scale = Vector2(0.66, 0.66)
-texture = ExtResource("11_4r7i2")
-
-[node name="PanicGuy" type="AnimatedSprite2D" parent="." unique_id=1661804877]
-position = Vector2(-32, 376)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_q0hs1")
-animation = &"run"
-autoplay = "run"
-frame_progress = 0.26795578
-
 [node name="Humor" type="Sprite2D" parent="." unique_id=411428593]
 texture_filter = 1
-position = Vector2(456, 472)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_kem82")
+position = Vector2(464, 463.99994)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4r7i2")
 flip_h = true
-hframes = 8
-frame = 7
+hframes = 12
+frame = 11
 
 [node name="SportsCarLane" parent="." unique_id=1709379234 instance=ExtResource("5_i2xqr")]
 position = Vector2(-80, 504)
 obstacle_to_spawn = ExtResource("8_vqkwl")
-spawn_frequency = 5.0
-speed = 180
 go_right = true
+speed = 180
+spawn_frequency = 5.0
 
 [node name="CarLane" parent="." unique_id=115946447 instance=ExtResource("5_i2xqr")]
 position = Vector2(576, 472)
 obstacle_to_spawn = ExtResource("7_1878s")
-spawn_frequency = 8.0
 speed = 80
+spawn_frequency = 8.0
 
 [node name="BikerLane" parent="." unique_id=1504118750 instance=ExtResource("5_i2xqr")]
 position = Vector2(576, 432)
 obstacle_to_spawn = ExtResource("6_1878s")
-spawn_frequency = 10.0
 speed = 100
-
-[node name="InfoTimer" type="Timer" parent="." unique_id=535851699]
-wait_time = 5.0
-one_shot = true
+spawn_frequency = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1652026574]
 libraries/ = SubResource("AnimationLibrary_aal5x")
 autoplay = &"panic"
-
-[connection signal="timeout" from="InfoTimer" to="." method="_on_info_timer_timeout"]

@@ -20,6 +20,7 @@ config/icon="uid://de66x3vavap4p"
 
 GameManager="*res://scripts/game_manager.gd"
 AudioManager="*res://scripts/audio_manager.gd"
+MobileManager="*uid://co106gx1ygbms"
 
 [display]
 
