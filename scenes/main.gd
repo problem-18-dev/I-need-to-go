@@ -6,12 +6,15 @@ signal scene_changed(scene: Scene)
 
 enum Scene {SPLASH, MAIN_MENU, INFO_MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, END}
 
+@export_category("Scenes")
 @export var first_scene := Scene.MAIN_MENU
+
+@export_category("Music")
+@export var db_in_game := -14.0
 
 var scenes := {
 	Scene.SPLASH: "res://hud/splash.tscn",
 	Scene.MAIN_MENU: "res://hud/main_menu.tscn",
-	Scene.INFO_MENU: "res://hud/info_menu.tscn",
 	Scene.LEVEL_ONE: "res://levels/level_one.tscn",
 	Scene.LEVEL_TWO: "res://levels/level_two.tscn",
 	Scene.LEVEL_THREE: "res://levels/level_three.tscn",
@@ -47,5 +50,12 @@ func set_bus_db(bus: String, db: float) -> void:
 
 func _on_scene_changed(scene: Main.Scene) -> void:
 	match scene:
-		Main.Scene.MAIN_MENU:
-			$MusicPlayer.play()
+		Main.Scene.MAIN_MENU, Main.Scene.END:
+			$MusicPlayer.volume_db = 0
+		Main.Scene.SPLASH:
+			$MusicPlayer.stop()
+		_:
+			$MusicPlayer.volume_db = db_in_game
+	
+	if scene != Main.Scene.SPLASH and not $MusicPlayer.playing:
+		$MusicPlayer.play()

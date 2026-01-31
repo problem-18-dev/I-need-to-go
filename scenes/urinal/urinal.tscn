@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d4ksgenm87x7y"]
 
 [ext_resource type="Script" uid="uid://dupuiaw02aa5f" path="res://scenes/urinal/urinal.gd" id="1_yfsqg"]
-[ext_resource type="Texture2D" uid="uid://c23irixk8aemw" path="res://assets/images/new/urinal_closed.png" id="2_hjb86"]
-[ext_resource type="Texture2D" uid="uid://3galkyyxcscf" path="res://assets/images/new/urinal_open.png" id="3_hjb86"]
+[ext_resource type="Texture2D" uid="uid://c23irixk8aemw" path="res://assets/sprites/urinal/urinal_closed.png" id="2_hjb86"]
+[ext_resource type="Texture2D" uid="uid://3galkyyxcscf" path="res://assets/sprites/urinal/urinal_open.png" id="3_hjb86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfsqg"]
 size = Vector2(128, 64)

@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://d3p6u38s0bcx0" path="res://hud/end_menu.gd" id="1_onpop"]
 [ext_resource type="Theme" uid="uid://bdcm65s0mxpg1" path="res://hud/theme.tres" id="2_onpop"]
 [ext_resource type="PackedScene" uid="uid://jo0vwkms3tyr" path="res://scenes/tile_map.tscn" id="2_q77vm"]
-[ext_resource type="Texture2D" uid="uid://dmdububejlmqh" path="res://assets/images/new/player_pee.png" id="4_1pxyb"]
-[ext_resource type="Texture2D" uid="uid://cdd8duq5l3uun" path="res://assets/images/new/logo.png" id="5_jb48g"]
-[ext_resource type="Texture2D" uid="uid://ctgxqi1keg6hy" path="res://assets/images/new/player_walk_horizontal.png" id="6_g6mre"]
+[ext_resource type="Texture2D" uid="uid://dmdububejlmqh" path="res://assets/sprites/player/player_pee.png" id="4_1pxyb"]
+[ext_resource type="Texture2D" uid="uid://cdd8duq5l3uun" path="res://assets/sprites/hud/logo.png" id="5_jb48g"]
+[ext_resource type="Texture2D" uid="uid://ctgxqi1keg6hy" path="res://assets/sprites/player/player_walk_horizontal.png" id="6_g6mre"]
 [ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="6_qk6xy"]
 [ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/racing_car.tscn" id="7_e8bic"]
 [ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="8_137i0"]
@@ -114,7 +114,7 @@ _data = {
 &"panic": SubResource("Animation_s2g7c")
 }
 
-[node name="MainMenu" type="Node" unique_id=72431856]
+[node name="EndMenu" type="Node" unique_id=72431856]
 script = ExtResource("1_onpop")
 
 [node name="TileMap" parent="." unique_id=1031824972 instance=ExtResource("2_q77vm")]
@@ -239,12 +239,6 @@ obstacle_to_spawn = ExtResource("9_x3du0")
 spawn_frequency = 10.0
 speed = 100
 
-[node name="InfoTimer" type="Timer" parent="." unique_id=535851699]
-wait_time = 5.0
-one_shot = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1652026574]
 libraries/ = SubResource("AnimationLibrary_aal5x")
 autoplay = &"panic"
-
-[connection signal="timeout" from="InfoTimer" to="." method="_on_info_timer_timeout"]

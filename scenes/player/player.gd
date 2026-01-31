@@ -12,34 +12,34 @@ signal moved
 var _can_move := true
 var _reached_urinal := false
 
+@onready var animated_sprite := $AnimatedSprite2D
+@onready var collision_shape := $CollisionShape2D
+@onready var animation_player := $AnimationPlayer
 @onready var next_position := position
+@onready var raycasts := {
+	Vector2.RIGHT: $RightRayCast2D,
+	Vector2.LEFT: $LeftRayCast2D,
+	Vector2.UP: $TopRayCast2D,
+	Vector2.DOWN: $BottomRayCast2D
+}
 
 
 func _physics_process(delta: float) -> void:
-	# If already in position, don't move
-	if next_position == position:
+	# If already in position, return
+	if next_position.is_equal_approx(position):
 		return
 
 	# Snap target to next position if very close
 	var distance_to_target := position.distance_to(next_position)
 	if distance_to_target <= move_speed * delta:
-		position = next_position
-		$AnimatedSprite2D.play("idle")
-		_can_move = true
-
-		if _reached_urinal:
-			_pee()
-		else:
-			moved.emit()
+		_arrive_at_target()
 		return
 
-	_can_move = false
-	var direction := position.direction_to(next_position)
-	velocity = direction * move_speed
+	_move_to_target()
 	move_and_slide()
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_key_input(event: InputEvent) -> void:
 	if not _can_move or _reached_urinal:
 		return
 
@@ -59,68 +59,76 @@ func start(start_position: Vector2) -> void:
 
 func die() -> void:
 	_disable()
-	$AnimationPlayer.play("death")
+	animation_player.play("death")
 	AudioManager.play(AudioManager.SFX.DEATH)
 	died.emit()
 
 
 func move_back() -> void:
-	if _can_move:
-		next_position.y += move_distance
-		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.play("walk_vertical")
+	if not _can_move:
+		return
+
+	next_position.y += move_distance
+	animated_sprite.flip_h = true
+	animated_sprite.play("walk_vertical")
 
 
 func move_to_urinal(new_position: Vector2) -> void:
 	_reached_urinal = true
 	next_position = new_position
-	$CollisionShape2D.set_deferred("disabled", true)
-	$AnimatedSprite2D.play("walk_side")
-	
-	if next_position.x < position.x:
-		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
-		
+	collision_shape.set_deferred("disabled", true)
+	animated_sprite.play("walk_side")
+	animated_sprite.flip_h = new_position.x < position.x
 	got_to_urinal.emit()
+
+
+func _arrive_at_target() -> void:
+	position = next_position
+	animated_sprite.play("idle")
+	_can_move = true
+
+	if _reached_urinal:
+		_pee()
+	else:
+		moved.emit()
+
+
+func _move_to_target() -> void:
+	_can_move = false
+	var direction := position.direction_to(next_position)
+	velocity = direction * move_speed
 
 
 func _disable() -> void:
 	set_physics_process(false)
 	set_process_input(false)
-	$CollisionShape2D.set_deferred("disabled", true)
+	collision_shape.set_deferred("disabled", true)
+	_can_move = false
 
 
 func _destroy() -> void:
-	await $AnimatedSprite2D.animation_finished
+	await animated_sprite.animation_finished
 	queue_free()
 
 
 func _pee() -> void:
 	_disable()
 	AudioManager.play(AudioManager.SFX.PEE)
-	$AnimatedSprite2D.play("pee")
-	await $AnimatedSprite2D.animation_finished
-	$AnimatedSprite2D.play("pee_loop")
+	animated_sprite.play("pee")
+	await animated_sprite.animation_finished
+	animated_sprite.play("pee_loop")
 
 
 func _try_move(direction: Vector2, animation: String, flip_h: bool = false) -> void:
-	var raycast_name := ""
-	if direction == Vector2.RIGHT:
-		$RightRayCast2D.force_update_transform()
-		raycast_name = "RightRayCast2D"
-	elif direction == Vector2.LEFT:
-		$LeftRayCast2D.force_update_transform()
-		raycast_name = "LeftRayCast2D"
-	elif direction == Vector2.UP:
-		$TopRayCast2D.force_update_transform()
-		raycast_name = "TopRayCast2D"
-	elif direction == Vector2.DOWN:
-		$BottomRayCast2D.force_update_transform()
-		raycast_name = "BottomRayCast2D"
+	var raycast: RayCast2D = raycasts.get(direction)
+	assert(raycast, "Invalid direction, raycast doesn't exist")
+	
+	raycast.force_update_transform()
 
-	if not get_node(raycast_name).is_colliding():
+	if not raycast.is_colliding():
 		next_position += direction * move_distance
-		$AnimatedSprite2D.play(animation)
-		$AnimatedSprite2D.flip_h = flip_h
+		animated_sprite.play(animation)
+		animated_sprite.flip_h = flip_h
 		AudioManager.play(AudioManager.SFX.MOVE)
 
 

@@ -1,10 +1,14 @@
 extends Node
 
 
+@export_category("UX")
+@export var wait_time_on_info := 5.0
+
+
 func _ready() -> void:
-	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
-		$UI/PauseLabel.hide()
-		$UI/StartLabel.text = "Press SCREEN to start"
+	GameManager.reset_all()
+	if MobileManager.is_on_mobile():
+		$UI/Intro/StartLabel.text = "Tap SCREEN to start"
 
 
 func _input(event: InputEvent) -> void:
@@ -13,14 +17,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _show_info() -> void:
-	$UI/StartLabel.hide()
-	$UI/I.hide()
-	$UI/Logo.hide()
-	$UI/BathroomLabel.hide()
-	$UI/InfoLabel.show()
-	$InfoTimer.start()
-
-
-func _on_info_timer_timeout() -> void:
+	$UI/Intro.hide()
+	$UI/Info.show()
+	await get_tree().create_timer(wait_time_on_info).timeout
 	GameManager.main_scene.set_bus_db("Master", -3)
 	GameManager.main_scene.load_scene(Main.Scene.LEVEL_ONE)

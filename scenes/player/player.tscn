@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cbbyts6c0gnmp"]
 
 [ext_resource type="Script" uid="uid://c5bipvgnp4q7b" path="res://scenes/player/player.gd" id="1_dovo2"]
-[ext_resource type="Texture2D" uid="uid://bm1bbajxetgfk" path="res://assets/images/new/player_death.png" id="2_75vfm"]
-[ext_resource type="Texture2D" uid="uid://ddfl4f2j6pchh" path="res://assets/images/new/player_idle.png" id="3_0owmy"]
-[ext_resource type="Texture2D" uid="uid://dmdububejlmqh" path="res://assets/images/new/player_pee.png" id="4_0owmy"]
-[ext_resource type="Texture2D" uid="uid://ctgxqi1keg6hy" path="res://assets/images/new/player_walk_horizontal.png" id="5_75vfm"]
-[ext_resource type="Texture2D" uid="uid://bhwn2okaibgew" path="res://assets/images/new/player_walk_vertical.png" id="6_0owmy"]
+[ext_resource type="Texture2D" uid="uid://bm1bbajxetgfk" path="res://assets/sprites/player/player_death.png" id="2_75vfm"]
+[ext_resource type="Texture2D" uid="uid://ddfl4f2j6pchh" path="res://assets/sprites/player/player_idle.png" id="3_0owmy"]
+[ext_resource type="Texture2D" uid="uid://dmdububejlmqh" path="res://assets/sprites/player/player_pee.png" id="4_0owmy"]
+[ext_resource type="Texture2D" uid="uid://ctgxqi1keg6hy" path="res://assets/sprites/player/player_walk_horizontal.png" id="5_75vfm"]
+[ext_resource type="Texture2D" uid="uid://bhwn2okaibgew" path="res://assets/sprites/player/player_walk_vertical.png" id="6_0owmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(18, 16)
@@ -148,7 +148,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 10.0
+"speed": 12.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,7 +247,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0owmy"]
 resource_name = "death"
-length = 1.25
+length = 1.5
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -255,7 +255,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.0666667),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -269,7 +269,7 @@ tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 1.25),
+"times": PackedFloat32Array(1, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
