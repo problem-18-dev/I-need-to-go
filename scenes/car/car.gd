@@ -1,7 +1,7 @@
 extends Obstacle
 
 
-var animations := ['blue', 'purple', 'yellow']
+var animations := ['white', 'red', 'yellow']
 
 
 # Called when the node enters the scene tree for the first time.

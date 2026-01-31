@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://7hfjhiw5khyr" path="res://assets/images/new/sports_car_orange.png" id="5_xilmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhfra"]
-size = Vector2(114, 24)
+size = Vector2(102, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygqas"]
 atlas = ExtResource("3_66fjf")
@@ -73,11 +73,13 @@ animations = [{
 script = ExtResource("2_dvmpw")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=156974674]
-position = Vector2(-2, -12)
+position = Vector2(-2, -11)
 shape = SubResource("RectangleShape2D_yhfra")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
-position = Vector2(0, -32)
+texture_filter = 1
+position = Vector2(0, -29.000002)
+scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_tcn38")
 animation = &"orange"
 

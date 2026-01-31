@@ -24,3 +24,4 @@ func _physics_process(_delta: float) -> void:
 func flip() -> void:
 	super()
 	$RayCast2D.rotate(PI)
+	$AnimatedSprite2D.flip_h = false

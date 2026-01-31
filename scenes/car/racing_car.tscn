@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqel1ptok5dhx" path="res://assets/images/new/racing_car_white.png" id="4_ywfdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2otwt"]
-size = Vector2(122, 20)
+size = Vector2(110, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1vli"]
 atlas = ExtResource("2_54uci")
@@ -77,7 +77,9 @@ position = Vector2(-1, -10)
 shape = SubResource("RectangleShape2D_2otwt")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=1237012675]
-position = Vector2(0, -32)
+texture_filter = 1
+position = Vector2(0, -29.000002)
+scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_xilmd")
 animation = &"white"
 
