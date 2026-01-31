@@ -1,63 +1,45 @@
 [gd_scene format=3 uid="uid://bbavribyvkkpy"]
 
 [ext_resource type="PackedScene" uid="uid://crd5p4i6mdrot" path="res://scenes/level/level.tscn" id="1_ijs4g"]
-[ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="2_jun80"]
-[ext_resource type="PackedScene" uid="uid://c2gwwmdtf0qhl" path="res://scenes/biker/biker.tscn" id="3_d0lx0"]
-[ext_resource type="PackedScene" uid="uid://call54n4tvp4u" path="res://scenes/phone_zombie/phone_zombie.tscn" id="3_e70pa"]
-[ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="3_ikojo"]
 
 [node name="LevelTwo" unique_id=1084050264 instance=ExtResource("1_ijs4g")]
 next_level = 5
 
-[node name="PhoneZombiesLane" parent="Game/PhoneZombies" index="1" unique_id=216394314 instance=ExtResource("2_jun80")]
-position = Vector2(536, 216)
-obstacle_to_spawn = ExtResource("3_e70pa")
-spawn_frequency = 2.5
-speed = 60
+[node name="PhoneZombieLane" parent="Game/PhoneZombies" parent_id_path=PackedInt32Array(23687725) index="0" unique_id=1701755975]
+spawn_frequency = 2.75
 
-[node name="PhoneZombiesLane2" parent="Game/PhoneZombies" index="2" unique_id=73061990 instance=ExtResource("2_jun80")]
-position = Vector2(-24, 184)
-obstacle_to_spawn = ExtResource("3_e70pa")
-spawn_frequency = 2.5
-speed = 60
-go_right = true
+[node name="PhoneZombieLane2" parent="Game/PhoneZombies" parent_id_path=PackedInt32Array(23687725) index="1" unique_id=938576799]
+spawn_frequency = 2.75
 
-[node name="BikersLane" parent="Game/Bikers" index="1" unique_id=1237669749 instance=ExtResource("2_jun80")]
-position = Vector2(536, 312)
-obstacle_to_spawn = ExtResource("3_d0lx0")
+[node name="PhoneZombieLane3" parent="Game/PhoneZombies" parent_id_path=PackedInt32Array(23687725) index="2" unique_id=110875855]
+speed = 65
+
+[node name="BikerLane" parent="Game/Bikers" parent_id_path=PackedInt32Array(1371185795) index="0" unique_id=415543119]
 spawn_frequency = 2.25
-speed = 75
-sound_to_play = 4
 
-[node name="BikersLane2" parent="Game/Bikers" index="2" unique_id=1008013851 instance=ExtResource("2_jun80")]
-position = Vector2(536, 248)
-obstacle_to_spawn = ExtResource("3_d0lx0")
-spawn_frequency = 2.25
+[node name="BikerLane2" parent="Game/Bikers" parent_id_path=PackedInt32Array(1371185795) index="1" unique_id=1643888213]
+spawn_frequency = 1.75
+speed = 130
+
+[node name="BikerLane3" parent="Game/Bikers" parent_id_path=PackedInt32Array(1371185795) index="2" unique_id=1278390988]
+spawn_frequency = 1.75
+speed = 130
+
+[node name="VehiclesLane" parent="Game/Vehicles" parent_id_path=PackedInt32Array(603596156) index="0" unique_id=7080797]
+spawn_frequency = 2.75
 speed = 90
 
-[node name="BikersLane3" parent="Game/Bikers" index="3" unique_id=570673244 instance=ExtResource("2_jun80")]
-position = Vector2(-24, 280)
-obstacle_to_spawn = ExtResource("3_d0lx0")
-spawn_frequency = 2.25
-speed = 85
-go_right = true
+[node name="VehiclesLane2" parent="Game/Vehicles" parent_id_path=PackedInt32Array(603596156) index="1" unique_id=2100034899]
+spawn_frequency = 2.75
+speed = 90
 
-[node name="Car2" parent="Game/Vehicles" index="1" unique_id=1601481777 instance=ExtResource("3_ikojo")]
-position = Vector2(416, 440)
-speed = 120.0
+[node name="VehiclesLane3" parent="Game/Vehicles" parent_id_path=PackedInt32Array(603596156) index="2" unique_id=2100638895]
+spawn_frequency = 2.5
+speed = 90
 
-[node name="Car3" parent="Game/Vehicles" index="2" unique_id=359992869 instance=ExtResource("3_ikojo")]
-position = Vector2(264, 440)
-speed = 120.0
+[node name="VehiclesLane4" parent="Game/Vehicles" parent_id_path=PackedInt32Array(603596156) index="3" unique_id=1749203334]
+spawn_frequency = 2.5
+speed = 90
 
-[node name="VehiclesLane" parent="Game/Vehicles" index="3" unique_id=1828535742 instance=ExtResource("2_jun80")]
-position = Vector2(-128, 392)
-obstacle_to_spawn = ExtResource("3_ikojo")
-spawn_frequency = 2.0
-go_right = true
-sound_to_play = 3
-
-[node name="VehiclesLane2" parent="Game/Vehicles" index="4" unique_id=2032781625 instance=ExtResource("2_jun80")]
-position = Vector2(640, 440)
-obstacle_to_spawn = ExtResource("3_ikojo")
-spawn_frequency = 2.0
+[node name="VehiclesLane5" parent="Game/Vehicles" parent_id_path=PackedInt32Array(603596156) index="4" unique_id=2014263111]
+spawn_frequency = 3.75

@@ -2,7 +2,6 @@ extends Node
 
 
 func _ready() -> void:
-	GameManager.main_scene.set_bus_db("Master", 0)
 	$UI/ScoreLabel.text += str(GameManager.score)
 
 

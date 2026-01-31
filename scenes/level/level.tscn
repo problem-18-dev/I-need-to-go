@@ -4,7 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://d4ksgenm87x7y" path="res://scenes/urinal/urinal.tscn" id="2_nbgty"]
 [ext_resource type="PackedScene" uid="uid://cbbyts6c0gnmp" path="res://scenes/player/player.tscn" id="3_i166f"]
 [ext_resource type="PackedScene" uid="uid://boy8ljlgdseeg" path="res://hud/hud.tscn" id="5_hnne4"]
+[ext_resource type="PackedScene" uid="uid://call54n4tvp4u" path="res://scenes/phone_zombie/phone_zombie.tscn" id="6_tf2q7"]
+[ext_resource type="PackedScene" uid="uid://mp5dlw85rnyn" path="res://scenes/obstacle_lane/obstacle_lane.tscn" id="6_xv074"]
+[ext_resource type="PackedScene" uid="uid://c2gwwmdtf0qhl" path="res://scenes/biker/biker.tscn" id="7_pe1ox"]
+[ext_resource type="PackedScene" uid="uid://5e2cdapkplcr" path="res://scenes/car/car.tscn" id="8_m0bv2"]
 [ext_resource type="PackedScene" uid="uid://jo0vwkms3tyr" path="res://scenes/tile_map.tscn" id="8_xv074"]
+[ext_resource type="PackedScene" uid="uid://datkmkduq8t2h" path="res://scenes/car/sports_car.tscn" id="9_b7m21"]
+[ext_resource type="PackedScene" uid="uid://12hfduj785mb" path="res://scenes/car/racing_car.tscn" id="10_pm6rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv074"]
 size = Vector2(512, 32)
@@ -24,16 +30,9 @@ position = Vector2(256, 472)
 
 [node name="TileMap" parent="." unique_id=1031824972 instance=ExtResource("8_xv074")]
 
-[node name="OOB" type="Area2D" parent="." unique_id=402485165]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OOB" unique_id=647078549]
-position = Vector2(256, 496)
-shape = SubResource("RectangleShape2D_xv074")
-
 [node name="Game" type="Node2D" parent="." unique_id=285020677]
 y_sort_enabled = true
+texture_repeat = 1
 
 [node name="Urinals" type="Node2D" parent="Game" unique_id=789048526]
 
@@ -53,12 +52,86 @@ position = Vector2(448, 64)
 y_sort_enabled = true
 position = Vector2(0, -32)
 
+[node name="PhoneZombieLane" parent="Game/PhoneZombies" unique_id=1701755975 instance=ExtResource("6_xv074")]
+position = Vector2(576, 184)
+obstacle_to_spawn = ExtResource("6_tf2q7")
+speed = 50
+
+[node name="PhoneZombieLane2" parent="Game/PhoneZombies" unique_id=938576799 instance=ExtResource("6_xv074")]
+position = Vector2(-48, 152)
+obstacle_to_spawn = ExtResource("6_tf2q7")
+speed = 50
+go_right = true
+
+[node name="PhoneZombieLane3" parent="Game/PhoneZombies" unique_id=110875855 instance=ExtResource("6_xv074")]
+position = Vector2(544, 120)
+obstacle_to_spawn = ExtResource("6_tf2q7")
+spawn_frequency = 2.75
+speed = 60
+
 [node name="Bikers" type="Node2D" parent="Game" unique_id=1371185795]
 y_sort_enabled = true
 position = Vector2(0, -32)
 
+[node name="BikerLane" parent="Game/Bikers" unique_id=415543119 instance=ExtResource("6_xv074")]
+position = Vector2(-64, 280)
+obstacle_to_spawn = ExtResource("7_pe1ox")
+spawn_frequency = 2.5
+speed = 135
+go_right = true
+
+[node name="BikerLane2" parent="Game/Bikers" unique_id=1643888213 instance=ExtResource("6_xv074")]
+position = Vector2(568, 248)
+obstacle_to_spawn = ExtResource("7_pe1ox")
+spawn_frequency = 2.0
+speed = 125
+
+[node name="BikerLane3" parent="Game/Bikers" unique_id=1278390988 instance=ExtResource("6_xv074")]
+position = Vector2(-40, 216)
+obstacle_to_spawn = ExtResource("7_pe1ox")
+spawn_frequency = 2.0
+go_right = true
+
 [node name="Vehicles" type="Node2D" parent="Game" unique_id=603596156]
 y_sort_enabled = true
 position = Vector2(0, -32)
+
+[node name="VehiclesLane" parent="Game/Vehicles" unique_id=7080797 instance=ExtResource("6_xv074")]
+position = Vector2(576, 472)
+obstacle_to_spawn = ExtResource("8_m0bv2")
+speed = 80
+
+[node name="VehiclesLane2" parent="Game/Vehicles" unique_id=2100034899 instance=ExtResource("6_xv074")]
+position = Vector2(-96, 440)
+obstacle_to_spawn = ExtResource("9_b7m21")
+speed = 80
+go_right = true
+
+[node name="VehiclesLane3" parent="Game/Vehicles" unique_id=2100638895 instance=ExtResource("6_xv074")]
+position = Vector2(576, 408)
+obstacle_to_spawn = ExtResource("9_b7m21")
+spawn_frequency = 2.75
+speed = 80
+
+[node name="VehiclesLane4" parent="Game/Vehicles" unique_id=1749203334 instance=ExtResource("6_xv074")]
+position = Vector2(-96, 376)
+obstacle_to_spawn = ExtResource("8_m0bv2")
+spawn_frequency = 2.75
+speed = 80
+go_right = true
+
+[node name="VehiclesLane5" parent="Game/Vehicles" unique_id=2014263111 instance=ExtResource("6_xv074")]
+position = Vector2(576, 344)
+obstacle_to_spawn = ExtResource("10_pm6rs")
+spawn_frequency = 4.25
+speed = 140
+
+[node name="OOB" type="Area2D" parent="Game" unique_id=402485165]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/OOB" unique_id=647078549]
+position = Vector2(256, 496)
+shape = SubResource("RectangleShape2D_xv074")
 
 [connection signal="timeout" from="TimeLeft" to="." method="_on_time_left_timeout"]

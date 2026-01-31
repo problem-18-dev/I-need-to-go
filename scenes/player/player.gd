@@ -74,7 +74,12 @@ func move_back() -> void:
 func move_to_urinal(new_position: Vector2) -> void:
 	_reached_urinal = true
 	next_position = new_position
+	$CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D.play("walk_side")
+	
+	if next_position.x < position.x:
+		$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+		
 	got_to_urinal.emit()
 
 

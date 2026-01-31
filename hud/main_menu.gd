@@ -2,7 +2,6 @@ extends Node
 
 
 func _ready() -> void:
-	GameManager.main_scene.set_bus_db("Master", 0)
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$UI/PauseLabel.hide()
 		$UI/StartLabel.text = "Press SCREEN to start"
@@ -15,9 +14,9 @@ func _input(event: InputEvent) -> void:
 
 func _show_info() -> void:
 	$UI/StartLabel.hide()
-	$UI/PauseLabel.hide()
 	$UI/I.hide()
-	$UI/TitleTexture.hide()
+	$UI/Logo.hide()
+	$UI/BathroomLabel.hide()
 	$UI/InfoLabel.show()
 	$InfoTimer.start()
 
