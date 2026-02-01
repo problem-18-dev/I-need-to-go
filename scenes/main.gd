@@ -10,7 +10,8 @@ enum Scene {SPLASH, MAIN_MENU, INFO_MENU, LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, END
 @export var first_scene := Scene.MAIN_MENU
 
 @export_category("Music")
-@export var db_in_game := -14.0
+@export var db_in_menu := -6.0
+@export var db_in_game := -12.0
 
 var scenes := {
 	Scene.SPLASH: "res://hud/splash.tscn",
@@ -51,7 +52,7 @@ func set_bus_db(bus: String, db: float) -> void:
 func _on_scene_changed(scene: Main.Scene) -> void:
 	match scene:
 		Main.Scene.MAIN_MENU, Main.Scene.END:
-			$MusicPlayer.volume_db = 0
+			$MusicPlayer.volume_db = db_in_menu
 		Main.Scene.SPLASH:
 			$MusicPlayer.stop()
 		_:

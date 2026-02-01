@@ -65,7 +65,8 @@ func _game_over() -> void:
 
 func _win_level() -> void:
 	_stop_timer()
-	GameManager.score += floor(_time_left * score_time_multiplier)
+	var score_to_add := floori(_time_left * score_time_multiplier)
+	_change_score(score_to_add)
 	await $HUD.show_message("Nice!", 2)
 	await $HUD.show_message("Score: " + str(GameManager.score), 3)
 	GameManager.lives = GameManager.start_lives

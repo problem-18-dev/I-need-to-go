@@ -3,13 +3,10 @@
 [ext_resource type="Script" uid="uid://6i4pi61cngpq" path="res://hud/hud.gd" id="1_318vg"]
 [ext_resource type="Theme" uid="uid://bdcm65s0mxpg1" path="res://hud/theme.tres" id="2_2gk58"]
 [ext_resource type="Texture2D" uid="uid://b7u64hw2m6em7" path="res://assets/sprites/player/player_life.png" id="2_qv4qp"]
-[ext_resource type="Texture2D" uid="uid://c2m08xk31sijv" path="res://assets/sprites/hud/progress_bar_under.png" id="4_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://b061dsxn6b8nb" path="res://assets/sprites/hud/progress_bar_progress_red.png" id="7_qv4qp"]
+[ext_resource type="Texture2D" uid="uid://bwpudlfeddyqj" path="res://assets/sprites/hud/progress_bar_over.png" id="5_1kkc0"]
+[ext_resource type="Texture2D" uid="uid://em2p52kgpx1p" path="res://assets/sprites/hud/progress_bar_progress_danger.png" id="7_0ivg5"]
 [ext_resource type="Texture2D" uid="uid://bl35271aolsyt" path="res://assets/sprites/joystick.png" id="8_1kkc0"]
-[ext_resource type="Texture2D" uid="uid://0qd1jbeglrmc" path="res://assets/sprites/hud/progress_bar_progress.png" id="8_qv4qp"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1kkc0"]
-load_path = "res://.godot/imported/progress_bar_over.png-d7f2104d3fd24d0ff3d262b2eabbf541.ctex"
+[ext_resource type="Texture2D" uid="uid://m1d4ye0s66md" path="res://assets/sprites/hud/progress_bar_progress.png" id="8_qv4qp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kkc0"]
 size = Vector2(40, 25)
@@ -42,7 +39,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("7_qv4qp"), ExtResource("8_qv4qp")]
+"values": [ExtResource("7_0ivg5"), ExtResource("8_qv4qp")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv4qp"]
@@ -192,11 +189,11 @@ offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
 max_value = 30.0
-value = 15.0
+value = 30.0
 rounded = true
-texture_under = ExtResource("4_1kkc0")
-texture_over = SubResource("CompressedTexture2D_1kkc0")
+texture_over = ExtResource("5_1kkc0")
 texture_progress = ExtResource("8_qv4qp")
+texture_progress_offset = Vector2(21, 0)
 
 [node name="MobileButtonsTexture" type="TextureRect" parent="." unique_id=1603202164]
 visible = false
