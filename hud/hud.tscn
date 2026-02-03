@@ -49,6 +49,7 @@ _data = {
 }
 
 [node name="HUD" type="CanvasLayer" unique_id=321191228]
+process_mode = 1
 script = ExtResource("1_318vg")
 
 [node name="Lives" type="HBoxContainer" parent="." unique_id=1935840597]
@@ -189,7 +190,6 @@ offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
 max_value = 30.0
-value = 30.0
 rounded = true
 texture_over = ExtResource("5_1kkc0")
 texture_progress = ExtResource("8_qv4qp")

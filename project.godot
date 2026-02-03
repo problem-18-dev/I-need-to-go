@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="I need to go"
-config/version="1.0"
+config/version="2.0"
 run/main_scene="uid://bl1xwmos5n71v"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="uid://de66x3vavap4p"
+config/icon="uid://b2eq16moub2ub"
 
 [autoload]
 
@@ -29,7 +29,6 @@ window/size/viewport_height=512
 window/size/window_width_override=1024
 window/size/window_height_override=1024
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 window/handheld/orientation=1
 

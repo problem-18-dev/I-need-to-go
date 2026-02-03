@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://ckeqs0jmux5yo" path="res://assets/music/Vintage Porn.mp3" id="3_sugp2"]
 
 [node name="Main" type="Node" unique_id=1993764215]
+process_mode = 3
 script = ExtResource("1_tipki")
 first_scene = 0
 

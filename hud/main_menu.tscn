@@ -64,6 +64,68 @@ animations = [{
 "speed": 2.5
 }]
 
+[sub_resource type="Animation" id="Animation_aal5x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5019608)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BathroomLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8f0xs"]
+resource_name = "fade"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.7058824), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BathroomLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8l4b8"]
+_data = {
+&"RESET": SubResource("Animation_aal5x"),
+&"fade": SubResource("Animation_8f0xs")
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2g7c"]
 atlas = ExtResource("12_6klr8")
 region = Rect2(0, 0, 64, 128)
@@ -139,6 +201,7 @@ _data = {
 }
 
 [node name="MainMenu" type="Node" unique_id=72431856]
+process_mode = 3
 script = ExtResource("1_t104u")
 
 [node name="TileMap" parent="." unique_id=1031824972 instance=ExtResource("10_t104u")]
@@ -222,12 +285,33 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="StartLabel" type="Label" parent="UI/Intro" unique_id=1526937470]
+modulate = Color(1, 1, 1, 0.5019608)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.35
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.35
+offset_left = 84.0
+offset_top = 201.0
+offset_right = 384.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_m54ne")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_font_sizes/font_size = 32
+text = "Press SPACE to start"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InstructionsLabel" type="Label" parent="UI/Intro" unique_id=518205696]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.375
+anchor_right = 0.5
+anchor_bottom = 1.375
 offset_left = 84.0
 offset_top = 201.0
 offset_right = 384.0
@@ -237,8 +321,7 @@ grow_vertical = 2
 theme = ExtResource("2_m54ne")
 theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
 theme_override_font_sizes/font_size = 32
-text = "Press SPACE to start
-ARROWS to move
+text = "ARROWS to move
 P to pause"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -250,10 +333,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 316.0
-offset_top = 24.0
-offset_right = 468.0
-offset_bottom = 47.0
+offset_left = 372.0
+offset_top = 43.0
+offset_right = 457.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 0.2617994
@@ -275,6 +358,10 @@ texture_filter = 1
 position = Vector2(280.00003, 157)
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("11_4r7i2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Intro" unique_id=1733875048]
+libraries/ = SubResource("AnimationLibrary_8l4b8")
+autoplay = &"fade"
 
 [node name="PanicGuy" type="AnimatedSprite2D" parent="." unique_id=1661804877]
 position = Vector2(-32, 376)

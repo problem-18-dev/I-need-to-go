@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cg80cm1n58rta" path="res://scenes/obstacle_lane/obstacle_lane.gd" id="1_pboy0"]
 
 [node name="ObstacleLane" type="Node2D" unique_id=1701755975 groups=["obstacle_lane"]]
+process_mode = 1
 script = ExtResource("1_pboy0")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=2041975809]

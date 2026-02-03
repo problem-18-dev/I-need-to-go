@@ -21,6 +21,7 @@ script = ExtResource("1_qkmgm")
 player_scene = ExtResource("3_i166f")
 
 [node name="TimeLeft" type="Timer" parent="." unique_id=1398635452]
+process_mode = 1
 autostart = true
 
 [node name="HUD" parent="." unique_id=1493484659 instance=ExtResource("5_hnne4")]
