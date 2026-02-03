@@ -204,7 +204,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_side",
-"speed": 7.5
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
